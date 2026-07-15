@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, type Root } from "react-dom/client";
 import {
   ArrowLeft,
   ArrowRight,
@@ -28,6 +28,10 @@ type AtlasItem = {
 
 const baseUrl = import.meta.env.BASE_URL;
 const assetUrl = (path: string) => `${baseUrl}${path}`;
+
+declare global {
+  var __atlasRoot: Root | undefined;
+}
 
 function App() {
   const muscles = atlasContent.muscles as AtlasItem[];
@@ -224,7 +228,10 @@ function ReaderModal({ item, onClose }: { item: AtlasItem; onClose: () => void }
   );
 }
 
-createRoot(document.getElementById("app")!).render(
+const appRoot = globalThis.__atlasRoot ?? createRoot(document.getElementById("app")!);
+globalThis.__atlasRoot = appRoot;
+
+appRoot.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
