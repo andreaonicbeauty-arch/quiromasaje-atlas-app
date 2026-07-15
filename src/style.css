@@ -139,33 +139,6 @@ h3 {
   box-shadow: 0 12px 24px rgba(36, 52, 43, 0.12);
 }
 
-.tabs {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin: 0 -2px 18px;
-  padding: 8px 0;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(18px);
-}
-
-.tabs button {
-  min-height: 44px;
-  border: 0;
-  border-bottom: 2px solid var(--line);
-  color: var(--muted);
-  background: transparent;
-  font-weight: 760;
-}
-
-.tabs button.active {
-  color: var(--sage-dark);
-  border-color: var(--sage);
-}
-
 .hero-slide {
   display: grid;
   grid-template-columns: 0.88fr 1.12fr;
@@ -571,16 +544,5 @@ h3 {
 @media (min-width: 900px) {
   .app-shell {
     padding-inline: 32px;
-  }
-
-}
-
-@media (min-width: 721px) {
-  .bottom-nav {
-    display: none;
-  }
-
-  .app-shell {
-    padding-bottom: 64px;
   }
 }

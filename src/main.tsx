@@ -58,23 +58,11 @@ function App() {
     <main className="app-shell">
       <section className="topbar" aria-label="Cabecera">
         <div>
-          <p className="microcopy">Consulta estática</p>
+          <p className="microcopy">Curso Quiromasaje</p>
           <h1>Atlas Quiromasaje</h1>
         </div>
         <button className="round-button" type="button" aria-label="Abrir biblioteca" onClick={() => setView("library")}>
           <BookOpen size={22} />
-        </button>
-      </section>
-
-      <section className="tabs" aria-label="Secciones principales">
-        <button className={view === "home" ? "active" : ""} type="button" onClick={() => setView("home")}>
-          Fichas
-        </button>
-        <button className={view === "massages" ? "active" : ""} type="button" onClick={() => setView("massages")}>
-          Masajes
-        </button>
-        <button className={view === "library" ? "active" : ""} type="button" onClick={() => setView("library")}>
-          Biblioteca
         </button>
       </section>
 
