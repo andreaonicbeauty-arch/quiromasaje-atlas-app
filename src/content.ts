@@ -64,10 +64,19 @@ export const atlasContent = {
       "summary": "Ficha anatómica de serrato menor inferior con descripción, origen, inserción y acción en formato visual."
     },
     {
+      "id": "serrato-menor-superior",
+      "title": "Serrato Menor Superior",
+      "category": "muscle",
+      "order": 8,
+      "image": "assets/serrato-menor-superior.png",
+      "pdf": "pdfs/serrato-menor-superior.pdf",
+      "summary": "Ficha anatómica de serrato menor superior con descripción, origen, inserción y acción en formato visual."
+    },
+    {
       "id": "cuadrado-lumbar",
       "title": "Cuadrado Lumbar",
       "category": "muscle",
-      "order": 8,
+      "order": 9,
       "image": "assets/cuadrado-lumbar.png",
       "pdf": "pdfs/cuadrado-lumbar.pdf",
       "summary": "Ficha anatómica de cuadrado lumbar con descripción, origen, inserción y acción en formato visual."
@@ -76,7 +85,7 @@ export const atlasContent = {
       "id": "gluteo-mayor",
       "title": "Glúteo Mayor",
       "category": "muscle",
-      "order": 9,
+      "order": 10,
       "image": "assets/gluteo-mayor.png",
       "pdf": "pdfs/gluteo-mayor.pdf",
       "summary": "Ficha anatómica de glúteo mayor con descripción, origen, inserción y acción en formato visual."
@@ -85,7 +94,7 @@ export const atlasContent = {
       "id": "piramidal",
       "title": "Piramidal",
       "category": "muscle",
-      "order": 10,
+      "order": 11,
       "image": "assets/piramidal.png",
       "pdf": "pdfs/piramidal.pdf",
       "summary": "Ficha anatómica de piramidal con descripción, origen, inserción y acción en formato visual."
@@ -94,7 +103,7 @@ export const atlasContent = {
       "id": "psoasiliaco",
       "title": "Psoasiliaco",
       "category": "muscle",
-      "order": 11,
+      "order": 12,
       "image": "assets/psoasiliaco.png",
       "pdf": "pdfs/psoasiliaco.pdf",
       "summary": "Ficha anatómica de psoasiliaco con descripción, origen, inserción y acción en formato visual."
@@ -103,7 +112,7 @@ export const atlasContent = {
       "id": "pectoral-mayor",
       "title": "Pectoral Mayor",
       "category": "muscle",
-      "order": 12,
+      "order": 13,
       "image": "assets/pectoral-mayor.png",
       "pdf": "pdfs/pectoral-mayor.pdf",
       "summary": "Ficha anatómica de pectoral mayor con descripción, origen, inserción y acción en formato visual."
@@ -112,16 +121,52 @@ export const atlasContent = {
       "id": "serrato-mayor",
       "title": "Serrato Mayor",
       "category": "muscle",
-      "order": 13,
+      "order": 14,
       "image": "assets/serrato-mayor.png",
       "pdf": "pdfs/serrato-mayor.pdf",
       "summary": "Ficha anatómica de serrato mayor con descripción, origen, inserción y acción en formato visual."
     },
     {
+      "id": "romboides-mayor-y-menor",
+      "title": "Romboides Mayor y Menor",
+      "category": "muscle",
+      "order": 15,
+      "image": "assets/romboides-mayor-y-menor.png",
+      "pdf": "pdfs/romboides-mayor-y-menor.pdf",
+      "summary": "Ficha anatómica de romboides mayor y menor con descripción, origen, inserción y acción en formato visual."
+    },
+    {
+      "id": "intercostales-externo-e-interno",
+      "title": "Intercostales Externo e Interno",
+      "category": "muscle",
+      "order": 16,
+      "image": "assets/intercostales-externo-e-interno.png",
+      "pdf": "pdfs/intercostales-externo-e-interno.pdf",
+      "summary": "Ficha anatómica de intercostales externo e interno con descripción, origen, inserción y acción en formato visual."
+    },
+    {
+      "id": "recto-mayor-anterior-del-abdomen",
+      "title": "Recto Mayor Anterior del Abdomen",
+      "category": "muscle",
+      "order": 17,
+      "image": "assets/recto-mayor-anterior-del-abdomen.png",
+      "pdf": "pdfs/recto-mayor-anterior-del-abdomen.pdf",
+      "summary": "Ficha anatómica de recto mayor anterior del abdomen con descripción, origen, inserción y acción en formato visual."
+    },
+    {
+      "id": "diafragma",
+      "title": "Diafragma",
+      "category": "muscle",
+      "order": 18,
+      "image": "assets/diafragma.png",
+      "pdf": "pdfs/diafragma.pdf",
+      "summary": "Ficha anatómica de diafragma con descripción, origen, inserción y acción en formato visual."
+    },
+    {
       "id": "gluteo-medio",
       "title": "Glúteo Medio",
       "category": "muscle",
-      "order": 14,
+      "order": 19,
       "image": "assets/gluteo-medio.png",
       "pdf": "pdfs/gluteo-medio.pdf",
       "summary": "Ficha anatómica de glúteo medio con descripción, origen, inserción y acción en formato visual."
@@ -130,7 +175,7 @@ export const atlasContent = {
       "id": "gluteo-menor",
       "title": "Glúteo Menor",
       "category": "muscle",
-      "order": 15,
+      "order": 20,
       "image": "assets/gluteo-menor.png",
       "pdf": "pdfs/gluteo-menor.pdf",
       "summary": "Ficha anatómica de glúteo menor con descripción, origen, inserción y acción en formato visual."
@@ -156,10 +201,19 @@ export const atlasContent = {
       "summary": "Secuencia circulatoria organizada por zonas para seguir el recorrido del masaje."
     },
     {
+      "id": "masaje-dorsal",
+      "title": "Masaje Dorsal",
+      "category": "massage",
+      "order": 3,
+      "image": "assets/masaje-dorsal.png",
+      "pdf": "pdfs/masaje-dorsal.pdf",
+      "summary": "Protocolo centrado en la zona dorsal para repasar maniobras, ritmo y recorrido."
+    },
+    {
       "id": "masaje-gluteo",
       "title": "Masaje Glúteo",
       "category": "massage",
-      "order": 3,
+      "order": 4,
       "image": "assets/masaje-gluteo.png",
       "pdf": "pdfs/masaje-gluteo.pdf",
       "summary": "Rutina específica para glúteo, útil para repasar preparación, pases y trabajo localizado."
@@ -168,7 +222,7 @@ export const atlasContent = {
       "id": "masaje-lumbar",
       "title": "Masaje Lumbar",
       "category": "massage",
-      "order": 4,
+      "order": 5,
       "image": "assets/masaje-lumbar.png",
       "pdf": "pdfs/masaje-lumbar.pdf",
       "summary": "Protocolo centrado en la zona lumbar para repasar maniobras, ritmo y colocación."
@@ -177,7 +231,7 @@ export const atlasContent = {
       "id": "masaje-de-relajacion-decubito-prono",
       "title": "Masaje de Relajación Decubito Prono",
       "category": "massage",
-      "order": 5,
+      "order": 6,
       "image": "assets/masaje-de-relajacion-decubito-prono.png",
       "pdf": "pdfs/masaje-de-relajacion-decubito-prono.pdf",
       "summary": "Secuencia de relajación para consultar el orden de maniobras y tiempos durante la práctica."
@@ -186,7 +240,7 @@ export const atlasContent = {
       "id": "masaje-de-relajacion-decubito-supino",
       "title": "Masaje de Relajación Decubito Supino",
       "category": "massage",
-      "order": 6,
+      "order": 7,
       "image": "assets/masaje-de-relajacion-decubito-supino.png",
       "pdf": "pdfs/masaje-de-relajacion-decubito-supino.pdf",
       "summary": "Secuencia de relajación para consultar el orden de maniobras y tiempos durante la práctica."
