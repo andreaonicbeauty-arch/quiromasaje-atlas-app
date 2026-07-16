@@ -4,11 +4,15 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
+  CheckCircle2,
+  ClipboardList,
   Download,
   Grid2X2,
+  HelpCircle,
   HeartPulse,
   Home,
   Maximize2,
+  RotateCcw,
   Search,
   Sparkles,
   X,
@@ -26,6 +30,112 @@ type AtlasItem = {
   summary: string;
 };
 
+type View = "home" | "massages" | "library" | "exam" | "test";
+
+type ExamMuscle = {
+  id: string;
+  title: string;
+  note?: string;
+  origin: string;
+  destination: string;
+  action: string;
+  subgroups?: string[];
+};
+
+type ExamQuestion = {
+  id: string;
+  muscle: string;
+  prompt: string;
+  options: string[];
+  answer: string;
+};
+
+const examMuscles: ExamMuscle[] = [
+  {
+    id: "trapecio",
+    title: "Trapecio",
+    origin:
+      "Parte posterior del cráneo en el occipital, apófisis espinosas cervicales C1-C7 y vértebras dorsales D1-D12.",
+    destination: "Cara interna de la clavícula, espina escapular y acromion.",
+    action: "Rotación contralateral de cabeza y cuello, y extensión posterior de cabeza y cuello.",
+  },
+  {
+    id: "piramidal",
+    title: "Piramidal",
+    origin: "Cara anterior del sacro.",
+    destination: "Vértice superior del trocánter mayor.",
+    action: "Rotador externo del muslo y abductor del muslo.",
+  },
+  {
+    id: "paravertebrales",
+    title: "Paravertebrales",
+    note: "Grupo erector de la columna. De más exterior a más interior:",
+    subgroups: ["Iliocostal", "Longísimo", "Espinoso"],
+    origin: "Origen común en sacro, cresta ilíaca, fascia toracolumbar y apófisis espinosas lumbares.",
+    destination: "Costillas, apófisis transversas y apófisis espinosas vertebrales, según el fascículo.",
+    action:
+      "Extensión de la columna; unilateralmente, inclinación lateral del tronco hacia el mismo lado y estabilización postural.",
+  },
+  {
+    id: "romboides",
+    title: "Romboides",
+    origin: "Apófisis espinosas de C7 a D5.",
+    destination: "Borde medial de la cara posterior del omóplato.",
+    action: "Aducción del omóplato y desplazamiento de los hombros hacia atrás.",
+  },
+];
+
+const examQuestions: ExamQuestion[] = [
+  {
+    id: "trapecio-origen",
+    muscle: "Trapecio",
+    prompt: "¿Cuál es el origen principal del trapecio según la ficha?",
+    options: [
+      "Occipital, apófisis espinosas C1-C7 y dorsales D1-D12",
+      "Cara anterior del sacro",
+      "Borde medial de la escápula",
+      "Trocánter mayor",
+    ],
+    answer: "Occipital, apófisis espinosas C1-C7 y dorsales D1-D12",
+  },
+  {
+    id: "piramidal-destino",
+    muscle: "Piramidal",
+    prompt: "¿Dónde se inserta o termina el piramidal?",
+    options: [
+      "Vértice superior del trocánter mayor",
+      "Cara interna de la clavícula",
+      "Costillas inferiores",
+      "Apófisis espinosas D1-D12",
+    ],
+    answer: "Vértice superior del trocánter mayor",
+  },
+  {
+    id: "paravertebrales-orden",
+    muscle: "Paravertebrales",
+    prompt: "¿Cuál es el orden de más exterior a más interior en los paravertebrales?",
+    options: [
+      "Iliocostal, longísimo, espinoso",
+      "Espinoso, longísimo, iliocostal",
+      "Longísimo, iliocostal, espinoso",
+      "Romboides, trapecio, piramidal",
+    ],
+    answer: "Iliocostal, longísimo, espinoso",
+  },
+  {
+    id: "romboides-accion",
+    muscle: "Romboides",
+    prompt: "¿Qué acción realiza el romboides?",
+    options: [
+      "Aduce el omóplato y desplaza los hombros hacia atrás",
+      "Rota externamente y abduce el muslo",
+      "Flexiona el cuello hacia delante",
+      "Desciende las costillas durante la espiración",
+    ],
+    answer: "Aduce el omóplato y desplaza los hombros hacia atrás",
+  },
+];
+
 const baseUrl = import.meta.env.BASE_URL;
 const assetUrl = (path: string) => `${baseUrl}${path}`;
 
@@ -36,10 +146,12 @@ declare global {
 function App() {
   const muscles = atlasContent.muscles as AtlasItem[];
   const massages = atlasContent.massages as AtlasItem[];
-  const [view, setView] = useState<"home" | "massages" | "library">("home");
+  const [view, setView] = useState<View>("home");
   const [active, setActive] = useState(0);
   const [query, setQuery] = useState("");
   const [reader, setReader] = useState<AtlasItem | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [submitted, setSubmitted] = useState(false);
 
   const current = muscles[active];
   const filtered = useMemo(() => {
@@ -151,6 +263,25 @@ function App() {
         </section>
       )}
 
+      {view === "exam" && <ExamSection muscles={examMuscles} />}
+
+      {view === "test" && (
+        <TestSection
+          questions={examQuestions}
+          answers={answers}
+          submitted={submitted}
+          onAnswer={(questionId, option) => {
+            setAnswers((currentAnswers) => ({ ...currentAnswers, [questionId]: option }));
+            setSubmitted(false);
+          }}
+          onSubmit={() => setSubmitted(true)}
+          onReset={() => {
+            setAnswers({});
+            setSubmitted(false);
+          }}
+        />
+      )}
+
       <nav className="bottom-nav" aria-label="Navegación inferior">
         <button className={view === "home" ? "active" : ""} type="button" onClick={() => setView("home")}>
           <Home size={22} />
@@ -163,6 +294,14 @@ function App() {
         <button className={view === "library" ? "active" : ""} type="button" onClick={() => setView("library")}>
           <Grid2X2 size={22} />
           Biblioteca
+        </button>
+        <button className={view === "exam" ? "active" : ""} type="button" onClick={() => setView("exam")}>
+          <ClipboardList size={22} />
+          Examen
+        </button>
+        <button className={view === "test" ? "active" : ""} type="button" onClick={() => setView("test")}>
+          <HelpCircle size={22} />
+          Test
         </button>
       </nav>
 
@@ -191,6 +330,144 @@ function MassageCard({ item, onOpen, large = false }: { item: AtlasItem; onOpen:
         <small>{item.summary}</small>
       </span>
     </button>
+  );
+}
+
+function ExamSection({ muscles }: { muscles: ExamMuscle[] }) {
+  return (
+    <section className="page-section exam-page">
+      <div className="section-heading expanded">
+        <div>
+          <h2>Examen</h2>
+          <p>Repaso por músculo: origen, destino y acción.</p>
+        </div>
+        <ClipboardList size={24} />
+      </div>
+      <div className="exam-grid">
+        {muscles.map((muscle) => (
+          <article className="exam-card" key={muscle.id}>
+            <div className="exam-card-title">
+              <h3>{muscle.title}</h3>
+              {muscle.note && <span>{muscle.note}</span>}
+            </div>
+            {muscle.subgroups && (
+              <ol className="subgroup-list" aria-label="Orden de exterior a interior">
+                {muscle.subgroups.map((subgroup) => (
+                  <li key={subgroup}>{subgroup}</li>
+                ))}
+              </ol>
+            )}
+            <dl className="exam-facts">
+              <div>
+                <dt>¿Origen?</dt>
+                <dd>{muscle.origin}</dd>
+              </div>
+              <div>
+                <dt>¿Destino?</dt>
+                <dd>{muscle.destination}</dd>
+              </div>
+              <div>
+                <dt>¿Acción?</dt>
+                <dd>{muscle.action}</dd>
+              </div>
+            </dl>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TestSection({
+  questions,
+  answers,
+  submitted,
+  onAnswer,
+  onSubmit,
+  onReset,
+}: {
+  questions: ExamQuestion[];
+  answers: Record<string, string>;
+  submitted: boolean;
+  onAnswer: (questionId: string, option: string) => void;
+  onSubmit: () => void;
+  onReset: () => void;
+}) {
+  const answeredCount = questions.filter((question) => answers[question.id]).length;
+  const score = questions.filter((question) => answers[question.id] === question.answer).length;
+  const isComplete = answeredCount === questions.length;
+
+  return (
+    <section className="page-section test-page">
+      <div className="section-heading expanded">
+        <div>
+          <h2>Test examen</h2>
+          <p>Una pregunta por grupo, cuatro respuestas posibles y corrección al finalizar.</p>
+        </div>
+        <HelpCircle size={24} />
+      </div>
+
+      <div className="test-status" aria-live="polite">
+        <span>
+          {answeredCount} / {questions.length} respondidas
+        </span>
+        {submitted && (
+          <strong>
+            Nota: {score} / {questions.length}
+          </strong>
+        )}
+      </div>
+
+      <div className="question-list">
+        {questions.map((question, questionIndex) => {
+          const selected = answers[question.id];
+          return (
+            <article className="question-card" key={question.id}>
+              <span className="question-label">
+                {questionIndex + 1}. {question.muscle}
+              </span>
+              <h3>{question.prompt}</h3>
+              <div className="option-grid">
+                {question.options.map((option) => {
+                  const isSelected = selected === option;
+                  const isCorrect = question.answer === option;
+                  const resultClass = submitted && (isCorrect ? "correct" : isSelected ? "wrong" : "");
+
+                  return (
+                    <button
+                      className={`answer-option ${isSelected ? "selected" : ""} ${resultClass}`}
+                      type="button"
+                      key={option}
+                      onClick={() => onAnswer(question.id, option)}
+                      aria-pressed={isSelected}
+                    >
+                      <span>{option}</span>
+                      {submitted && isCorrect && <CheckCircle2 size={18} />}
+                    </button>
+                  );
+                })}
+              </div>
+              {submitted && (
+                <p className={selected === question.answer ? "feedback correct" : "feedback wrong"}>
+                  {selected === question.answer ? "Correcta." : `Incorrecta. Respuesta correcta: ${question.answer}.`}
+                </p>
+              )}
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="test-actions">
+        <button className="primary-button" type="button" onClick={onSubmit} disabled={!isComplete}>
+          <CheckCircle2 size={18} />
+          Validar examen
+        </button>
+        <button className="ghost-button" type="button" onClick={onReset}>
+          <RotateCcw size={18} />
+          Reiniciar
+        </button>
+      </div>
+    </section>
   );
 }
 

@@ -40,6 +40,11 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -403,13 +408,200 @@ h3 {
   color: var(--muted);
 }
 
+.exam-grid,
+.question-list {
+  display: grid;
+  gap: 14px;
+}
+
+.exam-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.exam-card,
+.question-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 34px rgba(36, 52, 43, 0.08);
+}
+
+.exam-card {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.exam-card-title {
+  display: grid;
+  gap: 7px;
+}
+
+.exam-card-title span,
+.question-label {
+  color: var(--sage);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.subgroup-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: subgroup;
+}
+
+.subgroup-list li {
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid rgba(100, 132, 106, 0.22);
+  border-radius: 6px;
+  background: rgba(100, 132, 106, 0.08);
+  color: var(--sage-dark);
+  font-size: 0.9rem;
+  font-weight: 780;
+  line-height: 1.2;
+  counter-increment: subgroup;
+}
+
+.subgroup-list li::before {
+  content: counter(subgroup) ". ";
+}
+
+.exam-facts {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.exam-facts div {
+  display: grid;
+  gap: 5px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.exam-facts dt {
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.exam-facts dd {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.test-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(100, 132, 106, 0.22);
+  border-radius: var(--radius);
+  background: rgba(100, 132, 106, 0.08);
+  color: var(--sage-dark);
+  font-weight: 800;
+}
+
+.question-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.question-card h3 {
+  max-width: 48rem;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 58px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: #fff;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.answer-option span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.answer-option.selected {
+  border-color: var(--sage);
+  background: rgba(100, 132, 106, 0.1);
+}
+
+.answer-option.correct {
+  border-color: #3d8b5a;
+  background: rgba(61, 139, 90, 0.12);
+  color: #22583a;
+}
+
+.answer-option.wrong {
+  border-color: var(--coral);
+  background: rgba(231, 128, 111, 0.13);
+  color: #934131;
+}
+
+.feedback {
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.feedback.correct {
+  color: #22583a;
+  background: rgba(61, 139, 90, 0.12);
+}
+
+.feedback.wrong {
+  color: #934131;
+  background: rgba(231, 128, 111, 0.13);
+}
+
+.test-actions {
+  position: sticky;
+  bottom: 82px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 28px rgba(36, 52, 43, 0.1);
+  backdrop-filter: blur(14px);
+}
+
 .bottom-nav {
   position: fixed;
   left: 50%;
   bottom: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   width: min(100%, 640px);
   transform: translateX(-50%);
   padding: 9px 14px max(9px, env(safe-area-inset-bottom));
@@ -429,6 +621,7 @@ h3 {
   background: transparent;
   font-size: 0.76rem;
   font-weight: 760;
+  overflow-wrap: anywhere;
 }
 
 .bottom-nav button.active {
@@ -521,6 +714,15 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .exam-grid,
+  .option-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subgroup-list {
+    grid-template-columns: 1fr;
+  }
+
   .massage-overlay {
     padding: 18px;
   }
@@ -538,6 +740,18 @@ h3 {
 
   .section-heading.expanded {
     align-items: flex-start;
+  }
+
+  .bottom-nav {
+    padding-inline: 8px;
+  }
+
+  .bottom-nav button {
+    font-size: 0.68rem;
+  }
+
+  .test-actions {
+    bottom: 80px;
   }
 }
 
