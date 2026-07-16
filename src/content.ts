@@ -46,10 +46,19 @@ export const atlasContent = {
       "summary": "Ficha anatómica de transverso abdominal con descripción, origen, inserción y acción en formato visual."
     },
     {
+      "id": "paravertebral",
+      "title": "Paravertebral",
+      "category": "muscle",
+      "order": 6,
+      "image": "assets/paravertebral.png",
+      "pdf": "pdfs/paravertebral.pdf",
+      "summary": "Ficha anatómica de paravertebral con descripción, origen, inserción y acción en formato visual."
+    },
+    {
       "id": "serrato-menor-inferior",
       "title": "Serrato Menor Inferior",
       "category": "muscle",
-      "order": 6,
+      "order": 7,
       "image": "assets/serrato-menor-inferior.png",
       "pdf": "pdfs/serrato-menor-inferior.pdf",
       "summary": "Ficha anatómica de serrato menor inferior con descripción, origen, inserción y acción en formato visual."
@@ -58,7 +67,7 @@ export const atlasContent = {
       "id": "cuadrado-lumbar",
       "title": "Cuadrado Lumbar",
       "category": "muscle",
-      "order": 7,
+      "order": 8,
       "image": "assets/cuadrado-lumbar.png",
       "pdf": "pdfs/cuadrado-lumbar.pdf",
       "summary": "Ficha anatómica de cuadrado lumbar con descripción, origen, inserción y acción en formato visual."
@@ -67,7 +76,7 @@ export const atlasContent = {
       "id": "gluteo-mayor",
       "title": "Glúteo Mayor",
       "category": "muscle",
-      "order": 8,
+      "order": 9,
       "image": "assets/gluteo-mayor.png",
       "pdf": "pdfs/gluteo-mayor.pdf",
       "summary": "Ficha anatómica de glúteo mayor con descripción, origen, inserción y acción en formato visual."
@@ -76,7 +85,7 @@ export const atlasContent = {
       "id": "piramidal",
       "title": "Piramidal",
       "category": "muscle",
-      "order": 9,
+      "order": 10,
       "image": "assets/piramidal.png",
       "pdf": "pdfs/piramidal.pdf",
       "summary": "Ficha anatómica de piramidal con descripción, origen, inserción y acción en formato visual."
@@ -85,7 +94,7 @@ export const atlasContent = {
       "id": "psoasiliaco",
       "title": "Psoasiliaco",
       "category": "muscle",
-      "order": 10,
+      "order": 11,
       "image": "assets/psoasiliaco.png",
       "pdf": "pdfs/psoasiliaco.pdf",
       "summary": "Ficha anatómica de psoasiliaco con descripción, origen, inserción y acción en formato visual."
@@ -94,7 +103,7 @@ export const atlasContent = {
       "id": "pectoral-mayor",
       "title": "Pectoral Mayor",
       "category": "muscle",
-      "order": 11,
+      "order": 12,
       "image": "assets/pectoral-mayor.png",
       "pdf": "pdfs/pectoral-mayor.pdf",
       "summary": "Ficha anatómica de pectoral mayor con descripción, origen, inserción y acción en formato visual."
@@ -103,7 +112,7 @@ export const atlasContent = {
       "id": "serrato-mayor",
       "title": "Serrato Mayor",
       "category": "muscle",
-      "order": 12,
+      "order": 13,
       "image": "assets/serrato-mayor.png",
       "pdf": "pdfs/serrato-mayor.pdf",
       "summary": "Ficha anatómica de serrato mayor con descripción, origen, inserción y acción en formato visual."
@@ -112,7 +121,7 @@ export const atlasContent = {
       "id": "gluteo-medio",
       "title": "Glúteo Medio",
       "category": "muscle",
-      "order": 13,
+      "order": 14,
       "image": "assets/gluteo-medio.png",
       "pdf": "pdfs/gluteo-medio.pdf",
       "summary": "Ficha anatómica de glúteo medio con descripción, origen, inserción y acción en formato visual."
@@ -121,7 +130,7 @@ export const atlasContent = {
       "id": "gluteo-menor",
       "title": "Glúteo Menor",
       "category": "muscle",
-      "order": 14,
+      "order": 15,
       "image": "assets/gluteo-menor.png",
       "pdf": "pdfs/gluteo-menor.pdf",
       "summary": "Ficha anatómica de glúteo menor con descripción, origen, inserción y acción en formato visual."
