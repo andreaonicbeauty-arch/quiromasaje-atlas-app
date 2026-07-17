@@ -163,10 +163,19 @@ export const atlasContent = {
       "summary": "Ficha anatómica de diafragma con descripción, origen, inserción y acción en formato visual."
     },
     {
+      "id": "angular-del-omoplato",
+      "title": "Angular del Omóplato",
+      "category": "muscle",
+      "order": 19,
+      "image": "assets/angular-del-omoplato.png",
+      "pdf": "pdfs/angular-del-omoplato.pdf",
+      "summary": "Ficha anatómica de angular del omóplato con descripción, origen, inserción y acción en formato visual."
+    },
+    {
       "id": "gluteo-medio",
       "title": "Glúteo Medio",
       "category": "muscle",
-      "order": 19,
+      "order": 20,
       "image": "assets/gluteo-medio.png",
       "pdf": "pdfs/gluteo-medio.pdf",
       "summary": "Ficha anatómica de glúteo medio con descripción, origen, inserción y acción en formato visual."
@@ -175,7 +184,7 @@ export const atlasContent = {
       "id": "gluteo-menor",
       "title": "Glúteo Menor",
       "category": "muscle",
-      "order": 20,
+      "order": 21,
       "image": "assets/gluteo-menor.png",
       "pdf": "pdfs/gluteo-menor.pdf",
       "summary": "Ficha anatómica de glúteo menor con descripción, origen, inserción y acción en formato visual."
@@ -207,7 +216,7 @@ export const atlasContent = {
       "order": 3,
       "image": "assets/masaje-dorsal.png",
       "pdf": "pdfs/masaje-dorsal.pdf",
-      "summary": "Protocolo centrado en la zona dorsal para repasar maniobras, ritmo y recorrido."
+      "summary": "Protocolo abdominal para consultar pasos, ritmo e indicaciones de forma visual."
     },
     {
       "id": "masaje-gluteo",

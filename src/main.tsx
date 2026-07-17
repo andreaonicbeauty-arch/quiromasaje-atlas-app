@@ -83,6 +83,14 @@ const examMuscles: ExamMuscle[] = [
     destination: "Borde medial de la cara posterior del omóplato.",
     action: "Aducción del omóplato y desplazamiento de los hombros hacia atrás.",
   },
+  {
+    id: "angular-del-omoplato",
+    title: "Angular del Omóplato",
+    note: "Conocido como el músculo del telefonista. Está en 2º y 3º plano.",
+    origin: "Lateral de las apófisis transversas de las 4 primeras vértebras cervicales C1-C2-C3-C4.",
+    destination: "Ángulo superior medial de la cara posterior del omóplato.",
+    action: "Eleva el omóplato y realiza flexión lateral del cuello de un solo lado.",
+  },
 ];
 
 const examQuestions: ExamQuestion[] = [
@@ -99,7 +107,7 @@ const examQuestions: ExamQuestion[] = [
     answer: "Occipital, apófisis espinosas C1-C7 y dorsales D1-D12",
   },
   {
-    id: "piramidal-destino",
+    id: "piramidal-insercion",
     muscle: "Piramidal",
     prompt: "¿Dónde se inserta o termina el piramidal?",
     options: [
@@ -133,6 +141,18 @@ const examQuestions: ExamQuestion[] = [
       "Desciende las costillas durante la espiración",
     ],
     answer: "Aduce el omóplato y desplaza los hombros hacia atrás",
+  },
+  {
+    id: "angular-insercion",
+    muscle: "Angular del Omóplato",
+    prompt: "¿Dónde se inserta el angular del omóplato?",
+    options: [
+      "Ángulo superior medial de la cara posterior del omóplato",
+      "Vértice superior del trocánter mayor",
+      "Cara interna de la clavícula",
+      "Apófisis espinosas de C7 a D5",
+    ],
+    answer: "Ángulo superior medial de la cara posterior del omóplato",
   },
 ];
 
@@ -339,7 +359,7 @@ function ExamSection({ muscles }: { muscles: ExamMuscle[] }) {
       <div className="section-heading expanded">
         <div>
           <h2>Examen</h2>
-          <p>Repaso por músculo: origen, destino y acción.</p>
+          <p>Repaso por músculo: origen, inserción y acción.</p>
         </div>
         <ClipboardList size={24} />
       </div>
@@ -363,7 +383,7 @@ function ExamSection({ muscles }: { muscles: ExamMuscle[] }) {
                 <dd>{muscle.origin}</dd>
               </div>
               <div>
-                <dt>¿Destino?</dt>
+                <dt>¿Inserción?</dt>
                 <dd>{muscle.destination}</dd>
               </div>
               <div>
