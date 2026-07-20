@@ -27,6 +27,7 @@ type AtlasItem = {
   order: number;
   image: string;
   pdf: string;
+  fileLabel?: string;
   summary: string;
 };
 
@@ -97,6 +98,30 @@ const examMuscles: ExamMuscle[] = [
     origin: "Lateral de las apófisis transversas de las 4 primeras vértebras cervicales C1-C2-C3-C4.",
     destination: "Ángulo superior medial de la cara posterior del omóplato.",
     action: "Eleva el omóplato y realiza flexión lateral del cuello de un solo lado.",
+  },
+  {
+    id: "esplenio",
+    title: "Esplenio",
+    note: "Músculo superficial, ancho y delgado, situado en la nuca y parte superior del dorso.",
+    origin: "Apófisis espinosas de C3 a D6.",
+    destination: "Hueso temporal en la apófisis mastoides.",
+    action: "Rotación ipsilateral de la cabeza hacia el mismo lado de la contracción.",
+  },
+  {
+    id: "complexo-mayor",
+    title: "Complexo Mayor",
+    note: "Músculo profundo relacionado con la parte posterior del cuello y cráneo.",
+    origin: "Apófisis transversas de C3 a D6.",
+    destination: "Occipital en la parte posterior del cráneo.",
+    action: "Flexión posterior de cabeza y cuello.",
+  },
+  {
+    id: "complexo-menor",
+    title: "Complexo Menor",
+    note: "Músculo profundo que comparte inserción y acción principal con el esplenio.",
+    origin: "Apófisis transversas de C4 a D3.",
+    destination: "Hueso temporal en la apófisis mastoides.",
+    action: "Rotación ipsilateral de la cabeza hacia el lado de la contracción.",
   },
 ];
 
@@ -275,6 +300,94 @@ const examQuestions: ExamQuestion[] = [
       "Trapecio inferiores, dorsal ancho, serrato menor inferior, oblicuo mayor, oblicuo menor, transverso abdominal, paravertebrales",
     ],
   },
+  {
+    id: "esplenio-simple",
+    muscle: "Esplenio",
+    prompt: "¿Cuál es la inserción del esplenio?",
+    options: [
+      "Hueso temporal en la apófisis mastoides",
+      "Occipital en la parte posterior del cráneo",
+      "Ángulo superior medial del omóplato",
+      "Vértice superior del trocánter mayor",
+    ],
+    answers: ["Hueso temporal en la apófisis mastoides"],
+  },
+  {
+    id: "complexo-mayor-simple",
+    muscle: "Complexo Mayor",
+    prompt: "¿Qué acción principal realiza el complexo mayor?",
+    options: [
+      "Flexión posterior de cabeza y cuello",
+      "Rotación ipsilateral de la cabeza",
+      "Aducción del omóplato",
+      "Rotación externa del muslo",
+    ],
+    answers: ["Flexión posterior de cabeza y cuello"],
+  },
+  {
+    id: "complexo-menor-simple",
+    muscle: "Complexo Menor",
+    prompt: "¿Dónde se inserta el complexo menor?",
+    options: [
+      "Hueso temporal en la apófisis mastoides",
+      "Cara interna de la clavícula",
+      "Borde medial de la escápula",
+      "Apófisis espinosas de C7 a D5",
+    ],
+    answers: ["Hueso temporal en la apófisis mastoides"],
+  },
+  {
+    id: "esplenio-complexo-menor-relacion",
+    muscle: "Preguntas cruzadas",
+    prompt: "¿Qué comparten el esplenio y el complexo menor?",
+    options: [
+      "Inserción en apófisis mastoides y rotación ipsilateral de la cabeza",
+      "Inserción en occipital y flexión posterior de cabeza y cuello",
+      "Origen en la cara anterior del sacro",
+      "Inserción en clavícula, espina escapular y acromion",
+    ],
+    answers: ["Inserción en apófisis mastoides y rotación ipsilateral de la cabeza"],
+  },
+  {
+    id: "esplenio-complexo-menor-recorrido",
+    muscle: "Preguntas cruzadas",
+    prompt: "Marca las afirmaciones correctas sobre esplenio y complexo menor.",
+    options: [
+      "Ambos llegan a la apófisis mastoides del temporal",
+      "Ambos realizan rotación ipsilateral de la cabeza",
+      "El complexo menor se inserta en el occipital",
+      "Ninguna es correcta",
+    ],
+    answers: [
+      "Ambos llegan a la apófisis mastoides del temporal",
+      "Ambos realizan rotación ipsilateral de la cabeza",
+    ],
+    hint: "Puede haber una, varias o ninguna correcta.",
+  },
+  {
+    id: "trapecio-complexo-mayor-relacion",
+    muscle: "Preguntas cruzadas",
+    prompt: "¿Qué relación hay entre trapecio y complexo mayor?",
+    options: [
+      "El complexo mayor se inserta en el occipital, zona que forma parte del origen del trapecio",
+      "Los dos se insertan en el trocánter mayor",
+      "El trapecio nace en la apófisis mastoides",
+      "No tienen relación anatómica en la ficha",
+    ],
+    answers: ["El complexo mayor se inserta en el occipital, zona que forma parte del origen del trapecio"],
+  },
+  {
+    id: "trapecio-complexo-mayor-recorrido",
+    muscle: "Preguntas cruzadas",
+    prompt: "Sobre el recorrido de trapecio y complexo mayor, marca la opción correcta.",
+    options: [
+      "Comparten relación con la zona posterior del cráneo y cuello",
+      "Ambos tienen origen en la cara anterior del sacro",
+      "Ambos se insertan únicamente en el omóplato",
+      "Ninguna es correcta",
+    ],
+    answers: ["Comparten relación con la zona posterior del cráneo y cuello"],
+  },
 ];
 
 const zoneTheory: ZoneTheory[] = [
@@ -383,7 +496,7 @@ function App() {
                 </button>
                 <a className="ghost-button" href={assetUrl(current.pdf)} target="_blank" rel="noreferrer">
                   <Download size={18} />
-                  PDF
+                  {current.fileLabel ?? "PDF"}
                 </a>
               </div>
             </div>
@@ -696,7 +809,7 @@ function ReaderModal({ item, onClose }: { item: AtlasItem; onClose: () => void }
           <strong>{item.title}</strong>
           <span>{item.category === "muscle" ? "Ficha anatómica" : "Protocolo de masaje"}</span>
         </div>
-        <a className="round-button" href={assetUrl(item.pdf)} target="_blank" rel="noreferrer" aria-label="Abrir PDF">
+        <a className="round-button" href={assetUrl(item.pdf)} target="_blank" rel="noreferrer" aria-label="Abrir archivo">
           <Download size={21} />
         </a>
       </div>

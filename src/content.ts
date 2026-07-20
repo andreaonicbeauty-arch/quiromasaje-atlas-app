@@ -7,6 +7,7 @@ export const atlasContent = {
       "order": 1,
       "image": "assets/trapecio.png",
       "pdf": "pdfs/trapecio.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de trapecio con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -16,6 +17,7 @@ export const atlasContent = {
       "order": 2,
       "image": "assets/dorsal.png",
       "pdf": "pdfs/dorsal.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de dorsal con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -25,6 +27,7 @@ export const atlasContent = {
       "order": 3,
       "image": "assets/oblicuo-mayor.png",
       "pdf": "pdfs/oblicuo-mayor.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de oblicuo mayor con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -34,6 +37,7 @@ export const atlasContent = {
       "order": 4,
       "image": "assets/oblicuo-menor.png",
       "pdf": "pdfs/oblicuo-menor.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de oblicuo menor con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -43,6 +47,7 @@ export const atlasContent = {
       "order": 5,
       "image": "assets/transverso-abdominal.png",
       "pdf": "pdfs/transverso-abdominal.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de transverso abdominal con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -52,6 +57,7 @@ export const atlasContent = {
       "order": 6,
       "image": "assets/paravertebral.png",
       "pdf": "pdfs/paravertebral.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de paravertebral con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -61,6 +67,7 @@ export const atlasContent = {
       "order": 7,
       "image": "assets/serrato-menor-inferior.png",
       "pdf": "pdfs/serrato-menor-inferior.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de serrato menor inferior con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -70,6 +77,7 @@ export const atlasContent = {
       "order": 8,
       "image": "assets/serrato-menor-superior.png",
       "pdf": "pdfs/serrato-menor-superior.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de serrato menor superior con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -79,6 +87,7 @@ export const atlasContent = {
       "order": 9,
       "image": "assets/cuadrado-lumbar.png",
       "pdf": "pdfs/cuadrado-lumbar.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de cuadrado lumbar con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -88,6 +97,7 @@ export const atlasContent = {
       "order": 10,
       "image": "assets/gluteo-mayor.png",
       "pdf": "pdfs/gluteo-mayor.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de glúteo mayor con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -97,6 +107,7 @@ export const atlasContent = {
       "order": 11,
       "image": "assets/piramidal.png",
       "pdf": "pdfs/piramidal.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de piramidal con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -106,6 +117,7 @@ export const atlasContent = {
       "order": 12,
       "image": "assets/psoasiliaco.png",
       "pdf": "pdfs/psoasiliaco.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de psoasiliaco con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -115,6 +127,7 @@ export const atlasContent = {
       "order": 13,
       "image": "assets/pectoral-mayor.png",
       "pdf": "pdfs/pectoral-mayor.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de pectoral mayor con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -124,6 +137,7 @@ export const atlasContent = {
       "order": 14,
       "image": "assets/serrato-mayor.png",
       "pdf": "pdfs/serrato-mayor.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de serrato mayor con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -133,6 +147,7 @@ export const atlasContent = {
       "order": 15,
       "image": "assets/romboides-mayor-y-menor.png",
       "pdf": "pdfs/romboides-mayor-y-menor.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de romboides mayor y menor con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -142,6 +157,7 @@ export const atlasContent = {
       "order": 16,
       "image": "assets/intercostales-externo-e-interno.png",
       "pdf": "pdfs/intercostales-externo-e-interno.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de intercostales externo e interno con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -151,6 +167,7 @@ export const atlasContent = {
       "order": 17,
       "image": "assets/recto-mayor-anterior-del-abdomen.png",
       "pdf": "pdfs/recto-mayor-anterior-del-abdomen.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de recto mayor anterior del abdomen con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -160,6 +177,7 @@ export const atlasContent = {
       "order": 18,
       "image": "assets/diafragma.png",
       "pdf": "pdfs/diafragma.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de diafragma con descripción, origen, inserción y acción en formato visual."
     },
     {
@@ -169,24 +187,57 @@ export const atlasContent = {
       "order": 19,
       "image": "assets/angular-del-omoplato.png",
       "pdf": "pdfs/angular-del-omoplato.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de angular del omóplato con descripción, origen, inserción y acción en formato visual."
+    },
+    {
+      "id": "esplenio",
+      "title": "Esplenio",
+      "category": "muscle",
+      "order": 20,
+      "image": "assets/esplenio.png",
+      "pdf": "pdfs/esplenio.pdf",
+      "fileLabel": "PDF",
+      "summary": "Ficha anatómica de esplenio con descripción, origen, inserción y acción en formato visual."
+    },
+    {
+      "id": "complexo-mayor",
+      "title": "Complexo Mayor",
+      "category": "muscle",
+      "order": 21,
+      "image": "assets/complexo-mayor.png",
+      "pdf": "pdfs/complexo-mayor.pdf",
+      "fileLabel": "PDF",
+      "summary": "Ficha anatómica de complexo mayor con descripción, origen, inserción y acción en formato visual."
+    },
+    {
+      "id": "complexo-menor",
+      "title": "Complexo Menor",
+      "category": "muscle",
+      "order": 22,
+      "image": "assets/complexo-menor.png",
+      "pdf": "pdfs/complexo-menor.pdf",
+      "fileLabel": "PDF",
+      "summary": "Ficha anatómica de complexo menor con descripción, origen, inserción y acción en formato visual."
     },
     {
       "id": "gluteo-medio",
       "title": "Glúteo Medio",
       "category": "muscle",
-      "order": 20,
+      "order": 23,
       "image": "assets/gluteo-medio.png",
       "pdf": "pdfs/gluteo-medio.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de glúteo medio con descripción, origen, inserción y acción en formato visual."
     },
     {
       "id": "gluteo-menor",
       "title": "Glúteo Menor",
       "category": "muscle",
-      "order": 21,
+      "order": 24,
       "image": "assets/gluteo-menor.png",
       "pdf": "pdfs/gluteo-menor.pdf",
+      "fileLabel": "PDF",
       "summary": "Ficha anatómica de glúteo menor con descripción, origen, inserción y acción en formato visual."
     }
   ],
@@ -198,6 +249,7 @@ export const atlasContent = {
       "order": 1,
       "image": "assets/masaje-aerofagia-estrenimiento.png",
       "pdf": "pdfs/masaje-aerofagia-estrenimiento.pdf",
+      "fileLabel": "PDF",
       "summary": "Protocolo abdominal para consultar pasos, ritmo e indicaciones de forma visual."
     },
     {
@@ -207,6 +259,7 @@ export const atlasContent = {
       "order": 2,
       "image": "assets/masaje-circulatorio.png",
       "pdf": "pdfs/masaje-circulatorio.pdf",
+      "fileLabel": "PDF",
       "summary": "Secuencia circulatoria organizada por zonas para seguir el recorrido del masaje."
     },
     {
@@ -216,6 +269,7 @@ export const atlasContent = {
       "order": 3,
       "image": "assets/masaje-dorsal.png",
       "pdf": "pdfs/masaje-dorsal.pdf",
+      "fileLabel": "PDF",
       "summary": "Protocolo abdominal para consultar pasos, ritmo e indicaciones de forma visual."
     },
     {
@@ -225,6 +279,7 @@ export const atlasContent = {
       "order": 4,
       "image": "assets/masaje-gluteo.png",
       "pdf": "pdfs/masaje-gluteo.pdf",
+      "fileLabel": "PDF",
       "summary": "Rutina específica para glúteo, útil para repasar preparación, pases y trabajo localizado."
     },
     {
@@ -234,25 +289,58 @@ export const atlasContent = {
       "order": 5,
       "image": "assets/masaje-lumbar.png",
       "pdf": "pdfs/masaje-lumbar.pdf",
+      "fileLabel": "PDF",
       "summary": "Protocolo centrado en la zona lumbar para repasar maniobras, ritmo y colocación."
+    },
+    {
+      "id": "masaje-de-cruralgia",
+      "title": "Masaje de Cruralgia",
+      "category": "massage",
+      "order": 6,
+      "image": "assets/masaje-de-cruralgia.png",
+      "pdf": "pdfs/masaje-de-cruralgia.pdf",
+      "fileLabel": "PDF",
+      "summary": "Protocolo para repasar maniobras relacionadas con cruralgia y trabajo de zona lumbar/pierna."
     },
     {
       "id": "masaje-de-relajacion-decubito-prono",
       "title": "Masaje de Relajación Decubito Prono",
       "category": "massage",
-      "order": 6,
+      "order": 7,
       "image": "assets/masaje-de-relajacion-decubito-prono.png",
       "pdf": "pdfs/masaje-de-relajacion-decubito-prono.pdf",
+      "fileLabel": "PDF",
       "summary": "Secuencia de relajación para consultar el orden de maniobras y tiempos durante la práctica."
     },
     {
       "id": "masaje-de-relajacion-decubito-supino",
       "title": "Masaje de Relajación Decubito Supino",
       "category": "massage",
-      "order": 7,
+      "order": 8,
       "image": "assets/masaje-de-relajacion-decubito-supino.png",
       "pdf": "pdfs/masaje-de-relajacion-decubito-supino.pdf",
+      "fileLabel": "PDF",
       "summary": "Secuencia de relajación para consultar el orden de maniobras y tiempos durante la práctica."
+    },
+    {
+      "id": "masajes-afectaciones-musculares-todas",
+      "title": "Masajes Afectaciones Musculares Todas",
+      "category": "massage",
+      "order": 9,
+      "image": "assets/masajes-afectaciones-musculares-todas.png",
+      "pdf": "pdfs/masajes-afectaciones-musculares-todas.pdf",
+      "fileLabel": "PDF",
+      "summary": "Compendio de protocolos por afectacion muscular para consulta rapida."
+    },
+    {
+      "id": "masaje-sacro",
+      "title": "Masaje Sacro",
+      "category": "massage",
+      "order": 10,
+      "image": "assets/masaje-sacro.jpg",
+      "pdf": "assets/masaje-sacro.jpg",
+      "fileLabel": "Imagen",
+      "summary": "Imagen de referencia para consulta visual del masaje sacro."
     }
   ]
 };

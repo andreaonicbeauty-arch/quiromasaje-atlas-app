@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 import re
 import shutil
+import subprocess
 import unicodedata
 
 import fitz
@@ -52,6 +53,12 @@ def summary_for(title: str, is_massage: bool) -> str:
             return "Rutina específica para glúteo, útil para repasar preparación, pases y trabajo localizado."
         if "Circulatorio" in title:
             return "Secuencia circulatoria organizada por zonas para seguir el recorrido del masaje."
+        if "Cruralgia" in title:
+            return "Protocolo para repasar maniobras relacionadas con cruralgia y trabajo de zona lumbar/pierna."
+        if "Afectaciones Musculares" in title:
+            return "Compendio de protocolos por afectacion muscular para consulta rapida."
+        if "Sacro" in title:
+            return "Imagen de referencia para consulta visual del masaje sacro."
         return "Protocolo abdominal para consultar pasos, ritmo e indicaciones de forma visual."
     return f"Ficha anatómica de {title.lower()} con descripción, origen, inserción y acción en formato visual."
 
@@ -66,7 +73,7 @@ def render_cover(pdf_path: Path, output_path: Path) -> None:
     document.close()
 
 
-def build_item(pdf_path: Path, category: str, index: int) -> dict:
+def build_pdf_item(pdf_path: Path, category: str, index: int) -> dict:
     title = clean_title(pdf_path)
     title = TITLE_FIXES.get(title, title)
     slug = ascii_slug(title)
@@ -82,7 +89,34 @@ def build_item(pdf_path: Path, category: str, index: int) -> dict:
         "order": index,
         "image": f"assets/{image_name}",
         "pdf": f"pdfs/{pdf_name}",
+        "fileLabel": "PDF",
         "summary": summary_for(title, is_massage),
+    }
+
+
+def build_image_item(image_path: Path, category: str, index: int) -> dict:
+    title = clean_title(image_path)
+    title = TITLE_FIXES.get(title, title)
+    slug = ascii_slug(title)
+    image_name = f"{slug}.jpg"
+    output_path = ASSETS / image_name
+    if image_path.suffix.lower() == ".heic":
+        converter = shutil.which("heif-convert")
+        if converter is None:
+            lookup = subprocess.run(["where.exe", "heif-convert"], check=True, capture_output=True, text=True)
+            converter = lookup.stdout.splitlines()[0]
+        subprocess.run([converter, str(image_path), str(output_path)], check=True)
+    else:
+        shutil.copy2(image_path, output_path)
+    return {
+        "id": slug,
+        "title": title,
+        "category": category,
+        "order": index,
+        "image": f"assets/{image_name}",
+        "pdf": f"assets/{image_name}",
+        "fileLabel": "Imagen",
+        "summary": summary_for(title, category == "massage"),
     }
 
 
@@ -97,8 +131,21 @@ def main() -> None:
         [path for path in SOURCE.glob("Masaje*.pdf")],
         key=lambda path: path.name,
     )
-    muscles = [build_item(path, "muscle", index + 1) for index, path in enumerate(muscle_pdfs)]
-    massages = [build_item(path, "massage", index + 1) for index, path in enumerate(massage_pdfs)]
+    massage_images = sorted(
+        [
+            path
+            for path in SOURCE.iterdir()
+            if path.is_file()
+            and path.name.lower().startswith("masaje")
+            and path.suffix.lower() in {".heic", ".jpg", ".jpeg", ".png", ".webp"}
+        ],
+        key=lambda path: path.name,
+    )
+    muscles = [build_pdf_item(path, "muscle", index + 1) for index, path in enumerate(muscle_pdfs)]
+    massages = [
+        *(build_pdf_item(path, "massage", index + 1) for index, path in enumerate(massage_pdfs)),
+        *(build_image_item(path, "massage", len(massage_pdfs) + index + 1) for index, path in enumerate(massage_images)),
+    ]
     data = {
         "muscles": muscles,
         "massages": massages,
