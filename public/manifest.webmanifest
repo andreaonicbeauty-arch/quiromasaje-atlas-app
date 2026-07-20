@@ -1,0 +1,25 @@
+{
+  "name": "Atlas Quiromasaje",
+  "short_name": "Quiromasaje",
+  "description": "Atlas de fichas anatómicas, protocolos de masaje y examen de repaso.",
+  "start_url": "/quiromasaje-atlas-app/",
+  "scope": "/quiromasaje-atlas-app/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#64846a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

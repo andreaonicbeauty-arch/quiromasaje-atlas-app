@@ -408,22 +408,55 @@ h3 {
   color: var(--muted);
 }
 
+.zone-grid,
 .exam-grid,
 .question-list {
   display: grid;
   gap: 14px;
 }
 
+.zone-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
 .exam-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.zone-card,
 .exam-card,
 .question-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 14px 34px rgba(36, 52, 43, 0.08);
+}
+
+.zone-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 18px;
+}
+
+.zone-card span {
+  color: var(--sage);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.zone-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.zone-list li {
+  color: var(--muted);
+  line-height: 1.35;
+  padding-left: 2px;
 }
 
 .exam-card {
@@ -518,6 +551,12 @@ h3 {
 
 .question-card h3 {
   max-width: 48rem;
+}
+
+.question-hint {
+  color: var(--sage-dark);
+  font-size: 0.9rem;
+  font-weight: 760;
 }
 
 .option-grid {
@@ -714,6 +753,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .zone-grid,
   .exam-grid,
   .option-grid {
     grid-template-columns: 1fr;
