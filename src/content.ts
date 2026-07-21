@@ -221,10 +221,30 @@ export const atlasContent = {
       "summary": "Ficha anatómica de complexo menor con descripción, origen, inserción y acción en formato visual."
     },
     {
+      "id": "esternocleidomastoideo",
+      "title": "Esternocleidomastoideo",
+      "category": "muscle",
+      "order": 23,
+      "image": "assets/esternocleidomastoideo.png",
+      "pdf": "pdfs/esternocleidomastoideo.pdf",
+      "fileLabel": "PDF",
+      "summary": "Ficha anatómica de esternocleidomastoideo con descripción, origen, inserción y acción en formato visual."
+    },
+    {
+      "id": "escalenos",
+      "title": "Escalenos",
+      "category": "muscle",
+      "order": 24,
+      "image": "assets/escalenos.png",
+      "pdf": "pdfs/escalenos.pdf",
+      "fileLabel": "PDF",
+      "summary": "Ficha anatómica de escalenos con descripción, origen, inserción y acción en formato visual."
+    },
+    {
       "id": "gluteo-medio",
       "title": "Glúteo Medio",
       "category": "muscle",
-      "order": 23,
+      "order": 25,
       "image": "assets/gluteo-medio.png",
       "pdf": "pdfs/gluteo-medio.pdf",
       "fileLabel": "PDF",
@@ -234,7 +254,7 @@ export const atlasContent = {
       "id": "gluteo-menor",
       "title": "Glúteo Menor",
       "category": "muscle",
-      "order": 24,
+      "order": 26,
       "image": "assets/gluteo-menor.png",
       "pdf": "pdfs/gluteo-menor.pdf",
       "fileLabel": "PDF",

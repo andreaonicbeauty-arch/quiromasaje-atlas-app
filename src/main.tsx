@@ -123,6 +123,22 @@ const examMuscles: ExamMuscle[] = [
     destination: "Hueso temporal en la apófisis mastoides.",
     action: "Rotación ipsilateral de la cabeza hacia el lado de la contracción.",
   },
+  {
+    id: "esternocleidomastoideo",
+    title: "Esternocleidomastoideo",
+    note: "Músculo de la tortícolis, totalmente superficial. Se trabaja en posición de supino.",
+    origin: "Parte superior del esternón y parte medial de la clavícula.",
+    destination: "Hueso temporal en su apófisis mastoides.",
+    action: "Rotación contralateral de la cabeza hacia el lado opuesto a la contracción.",
+  },
+  {
+    id: "escalenos",
+    title: "Escalenos",
+    note: "Formados por escaleno anterior, medio y posterior. Están en un plano medio.",
+    origin: "Zona antero-lateral de las apófisis transversas de C2 a C7.",
+    destination: "Parte lateral de la 1ª y 2ª costilla.",
+    action: "Flexión lateral del cuello y flexión anterior del cuello.",
+  },
 ];
 
 const examQuestions: ExamQuestion[] = [
@@ -387,6 +403,58 @@ const examQuestions: ExamQuestion[] = [
       "Ninguna es correcta",
     ],
     answers: ["Comparten relación con la zona posterior del cráneo y cuello"],
+  },
+  {
+    id: "esternocleidomastoideo-simple",
+    muscle: "Esternocleidomastoideo",
+    prompt: "¿Cuál es la acción principal del esternocleidomastoideo según la ficha?",
+    options: [
+      "Rotación contralateral de la cabeza hacia el lado opuesto a la contracción",
+      "Aducción del omóplato y desplazamiento de hombros hacia atrás",
+      "Rotación externa y abducción del muslo",
+      "Flexión posterior de cabeza y cuello",
+    ],
+    answers: ["Rotación contralateral de la cabeza hacia el lado opuesto a la contracción"],
+  },
+  {
+    id: "escalenos-simple",
+    muscle: "Escalenos",
+    prompt: "¿Dónde se insertan los escalenos según la ficha?",
+    options: [
+      "Parte lateral de la 1ª y 2ª costilla",
+      "Hueso temporal en la apófisis mastoides",
+      "Cara interna de la clavícula, espina escapular y acromion",
+      "Ángulo superior medial del omóplato",
+    ],
+    answers: ["Parte lateral de la 1ª y 2ª costilla"],
+  },
+  {
+    id: "esternocleidomastoideo-escalenos-cuello",
+    muscle: "Preguntas cruzadas",
+    prompt: "¿Qué comparten esternocleidomastoideo y escalenos?",
+    options: [
+      "Participan en movimientos del cuello",
+      "Tienen inserción en costillas",
+      "Se originan en apófisis espinosas dorsales",
+      "Ninguna es correcta",
+    ],
+    answers: ["Participan en movimientos del cuello"],
+  },
+  {
+    id: "esternocleidomastoideo-escalenos-rotacion",
+    muscle: "Preguntas cruzadas",
+    prompt: "Marca las afirmaciones correctas sobre rotación y flexión cervical.",
+    options: [
+      "El esternocleidomastoideo rota la cabeza hacia el lado opuesto a la contracción",
+      "Los escalenos realizan flexión lateral y anterior del cuello",
+      "Ambos se insertan en la apófisis mastoides",
+      "Ninguna es correcta",
+    ],
+    answers: [
+      "El esternocleidomastoideo rota la cabeza hacia el lado opuesto a la contracción",
+      "Los escalenos realizan flexión lateral y anterior del cuello",
+    ],
+    hint: "Puede haber una, varias o ninguna correcta.",
   },
 ];
 

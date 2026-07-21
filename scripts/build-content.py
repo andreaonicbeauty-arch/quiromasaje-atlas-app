@@ -33,6 +33,7 @@ def clean_title(pdf_path: Path) -> str:
 
 
 TITLE_FIXES = {
+    "Esternocleidomastoide": "Esternocleidomastoideo",
     "Gluteo Mayor": "Glúteo Mayor",
     "Gluteo Medio": "Glúteo Medio",
     "Gluteo Menor": "Glúteo Menor",
