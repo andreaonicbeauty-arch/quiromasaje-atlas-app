@@ -259,6 +259,16 @@ export const atlasContent = {
       "pdf": "pdfs/gluteo-menor.pdf",
       "fileLabel": "PDF",
       "summary": "Ficha anatómica de glúteo menor con descripción, origen, inserción y acción en formato visual."
+    },
+    {
+      "id": "esquema-masaje",
+      "title": "Esquema Masaje",
+      "category": "muscle",
+      "order": 27,
+      "image": "assets/esquema-masaje.jpg",
+      "pdf": "assets/esquema-masaje.jpg",
+      "fileLabel": "Imagen",
+      "summary": "Esquema visual del protocolo de masaje en C.V. con pasos, técnicas y bloques de trabajo."
     }
   ],
   "massages": [

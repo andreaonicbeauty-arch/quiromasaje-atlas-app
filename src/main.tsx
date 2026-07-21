@@ -408,6 +408,41 @@ const examQuestions: ExamQuestion[] = [
     ],
     answers: ["Rotación contralateral de la cabeza hacia el lado opuesto a la contracción"],
   },
+  {
+    id: "protocolo-masaje-primer-paso",
+    muscle: "Protocolo del Masaje en C.V.",
+    prompt: "Según el esquema, ¿con qué empieza el protocolo del masaje en C.V.?",
+    options: [
+      "Tejido celular subcutáneo",
+      "Patologías asociadas",
+      "Estiramientos",
+      "Bloques de T.N.M.",
+    ],
+    answers: ["Tejido celular subcutáneo"],
+  },
+  {
+    id: "protocolo-masaje-venoso",
+    muscle: "Protocolo del Masaje en C.V.",
+    prompt: "¿Qué técnica se asocia al sistema venoso superficial en el esquema?",
+    options: ["Vaciados", "Pinzado rodado", "Presiones", "Estiramientos"],
+    answers: ["Vaciados"],
+  },
+  {
+    id: "protocolo-masaje-planos",
+    muscle: "Protocolo del Masaje en C.V.",
+    prompt: "Marca las afirmaciones correctas sobre la parte de planos musculares del esquema.",
+    options: [
+      "En los planos donde haya afectación muscular se añade trabajo",
+      "Los bloques se organizan como amasamiento + T.N.M. + amasamiento",
+      "El sistema venoso superficial se trabaja con rotación contralateral",
+      "Ninguna es correcta",
+    ],
+    answers: [
+      "En los planos donde haya afectación muscular se añade trabajo",
+      "Los bloques se organizan como amasamiento + T.N.M. + amasamiento",
+    ],
+    hint: "Puede haber una, varias o ninguna correcta.",
+  },
 ];
 
 const zoneTheory: ZoneTheory[] = [
@@ -448,6 +483,19 @@ const zoneTheory: ZoneTheory[] = [
       "Oblicuo menor",
       "Transverso abdominal",
       "Paravertebrales",
+    ],
+  },
+  {
+    id: "protocolo-masaje-cv",
+    title: "Protocolo del Masaje en C.V.",
+    items: [
+      "Tejido celular subcutáneo: pinzado rodado y presión palmar profunda",
+      "Sistema venoso superficial: vaciados",
+      "Músculos en general: amasamientos digital/nudillar o palmo-digital",
+      "Músculos en particular: técnicas de pre-normalización o inespecíficas",
+      "En planos con afectación muscular: añadir técnicas de normalización o específicas",
+      "Bloques: amasamiento + T.N.M. + amasamiento",
+      "Final: sistema venoso superficial, estiramientos y patologías asociadas",
     ],
   },
 ];

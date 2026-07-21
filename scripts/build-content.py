@@ -63,6 +63,8 @@ def summary_for(title: str, is_massage: bool) -> str:
         if "Sacro" in title:
             return "Imagen de referencia para consulta visual del masaje sacro."
         return "Protocolo abdominal para consultar pasos, ritmo e indicaciones de forma visual."
+    if "Esquema Masaje" in title:
+        return "Esquema visual del protocolo de masaje en C.V. con pasos, técnicas y bloques de trabajo."
     return f"Ficha anatómica de {title.lower()} con descripción, origen, inserción y acción en formato visual."
 
 
@@ -130,6 +132,16 @@ def main() -> None:
         [path for path in SOURCE.glob("*.pdf") if not path.name.lower().startswith("masaje")],
         key=lambda path: path.name,
     )
+    muscle_images = sorted(
+        [
+            path
+            for path in SOURCE.iterdir()
+            if path.is_file()
+            and "esquema masaje" in clean_title(path).lower()
+            and path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}
+        ],
+        key=lambda path: path.name,
+    )
     massage_pdfs = sorted(
         [path for path in SOURCE.glob("Masaje*.pdf")],
         key=lambda path: path.name,
@@ -144,7 +156,10 @@ def main() -> None:
         ],
         key=lambda path: path.name,
     )
-    muscles = [build_pdf_item(path, "muscle", index + 1) for index, path in enumerate(muscle_pdfs)]
+    muscles = [
+        *(build_pdf_item(path, "muscle", index + 1) for index, path in enumerate(muscle_pdfs)),
+        *(build_image_item(path, "muscle", len(muscle_pdfs) + index + 1) for index, path in enumerate(muscle_images)),
+    ]
     massages = [
         *(build_pdf_item(path, "massage", index + 1) for index, path in enumerate(massage_pdfs)),
         *(build_image_item(path, "massage", len(massage_pdfs) + index + 1) for index, path in enumerate(massage_images)),
