@@ -53,6 +53,8 @@ def summary_for(title: str, is_massage: bool) -> str:
             return "Rutina específica para glúteo, útil para repasar preparación, pases y trabajo localizado."
         if "Circulatorio" in title:
             return "Secuencia circulatoria organizada por zonas para seguir el recorrido del masaje."
+        if "Cervical en Prono" in title:
+            return "Protocolo cervical en prono para repasar maniobras, recorrido y colocacion durante la practica."
         if "Cruralgia" in title:
             return "Protocolo para repasar maniobras relacionadas con cruralgia y trabajo de zona lumbar/pierna."
         if "Afectaciones Musculares" in title:
