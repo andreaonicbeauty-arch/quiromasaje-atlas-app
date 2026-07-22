@@ -219,6 +219,30 @@ const examQuestions: ExamQuestion[] = [
     hint: "Puede haber una, varias o ninguna correcta.",
   },
   {
+    id: "trapecio-fibras",
+    muscle: "Trapecio",
+    prompt: "¿En cuántos grupos se dividen las fibras del trapecio?",
+    options: [
+      "Dos: fibras superiores y fibras inferiores",
+      "Tres: fibras superiores, medias e inferiores",
+      "Cuatro: cervicales, dorsales, lumbares y sacras",
+      "Ninguna es correcta",
+    ],
+    answers: ["Tres: fibras superiores, medias e inferiores"],
+  },
+  {
+    id: "trapecio-insercion-examen",
+    muscle: "Trapecio",
+    prompt: "¿Dónde se encuentra la inserción del trapecio?",
+    options: [
+      "Cara posterior de la clavícula, espina escapular y acromion",
+      "Cara interna de la clavícula, espina escapular y acromion",
+      "Cara anterior de la clavícula y posterior de espina escapular y acromion",
+      "Ninguna es correcta",
+    ],
+    answers: ["Cara interna de la clavícula, espina escapular y acromion"],
+  },
+  {
     id: "piramidal-insercion",
     muscle: "Piramidal",
     prompt: "¿Dónde se inserta o termina el piramidal?",
@@ -254,6 +278,18 @@ const examQuestions: ExamQuestion[] = [
       "Romboides, trapecio, piramidal",
     ],
     answers: ["Iliocostal, dorsal largo, espinoso"],
+  },
+  {
+    id: "paravertebral-origen-insercion-examen",
+    muscle: "Paravertebral",
+    prompt: "¿Qué origen e inserción corresponden a los paravertebrales?",
+    options: [
+      "Aponeurosis del sacro y parte anterior de la cresta ilíaca - apófisis espinosa C2",
+      "Aponeurosis del sacro y parte trasera de la cresta ilíaca - apófisis transversa C2",
+      "Aponeurosis del sacro y parte trasera de la cresta ilíaca - apófisis espinosa y transversa C2",
+      "Ninguna es correcta",
+    ],
+    answers: ["Aponeurosis del sacro y parte trasera de la cresta ilíaca - apófisis espinosa y transversa C2"],
   },
   {
     id: "paravertebral-multiple",
@@ -297,6 +333,18 @@ const examQuestions: ExamQuestion[] = [
     hint: "Puede haber una, varias o ninguna correcta.",
   },
   {
+    id: "romboides-origen-insercion-examen",
+    muscle: "Romboides",
+    prompt: "¿Qué origen e inserción corresponden al romboides?",
+    options: [
+      "Apófisis espinosas de C7 a D5 - borde del omóplato",
+      "Apófisis transversas de C7 a D4 - borde medial del omóplato",
+      "Apófisis espinosas de C7 a D5 - borde medial de la cara posterior del omóplato",
+      "Ninguna es correcta",
+    ],
+    answers: ["Apófisis espinosas de C7 a D5 - borde medial de la cara posterior del omóplato"],
+  },
+  {
     id: "angular-insercion",
     muscle: "Angular del Omóplato",
     prompt: "¿Dónde se inserta el angular del omóplato?",
@@ -321,6 +369,30 @@ const examQuestions: ExamQuestion[] = [
     ],
     answers: ["Ninguna es correcta"],
     hint: "Puede haber una, varias o ninguna correcta.",
+  },
+  {
+    id: "angular-origen-examen",
+    muscle: "Angular del Omóplato",
+    prompt: "¿Cuál es el origen del angular del omóplato?",
+    options: [
+      "En el lateral de las apófisis espinosas de C1 a C4",
+      "En el lateral de las apófisis transversas de C1 a C4",
+      "En el lateral de las apófisis transversas de C2 a C7",
+      "Ninguna es correcta",
+    ],
+    answers: ["En el lateral de las apófisis transversas de C1 a C4"],
+  },
+  {
+    id: "serrato-menor-superior-examen",
+    muscle: "Serrato Menor Superior",
+    prompt: "¿Qué origen, inserción y acción corresponden al serrato menor superior?",
+    options: [
+      "Apófisis espinosas C7 a D3 - cuatro primeras costillas - inspiración",
+      "Apófisis espinosas C7 a D3 - parte posterior de la cara externa de las 4 primeras costillas - inspiración",
+      "Apófisis transversas C7 a D3 - parte posterior de la cara externa de las 4 primeras costillas - espiración",
+      "Ninguna es correcta",
+    ],
+    answers: ["Apófisis espinosas C7 a D3 - parte posterior de la cara externa de las 4 primeras costillas - inspiración"],
   },
   {
     id: "interescapular-orden",
@@ -351,6 +423,20 @@ const examQuestions: ExamQuestion[] = [
     ],
   },
   {
+    id: "dorsal-orden-examen-foto",
+    muscle: "Zona Dorsal",
+    prompt: "Según el examen fotografiado, ¿qué orden de trabajo corresponde al masaje dorsal?",
+    options: [
+      "Trapecio fibras inferiores, dorsal ancho, serrato menor inferior, romboides, serrato menor superior, brazo en jarra, paravertebrales",
+      "Trapecio fibras inferiores, dorsal ancho, romboides, serrato menor superior, brazo en jarra, paravertebrales",
+      "Trapecio fibras inferiores y medias, dorsal ancho, serrato menor inferior, romboides, serrato menor superior, brazo en jarra, paravertebrales",
+      "Ninguna es correcta",
+    ],
+    answers: [
+      "Trapecio fibras inferiores, dorsal ancho, serrato menor inferior, romboides, serrato menor superior, brazo en jarra, paravertebrales",
+    ],
+  },
+  {
     id: "lumbar-orden",
     muscle: "Zona Lumbar",
     prompt: "Elige el orden correcto de superficial a profundo en zona lumbar.",
@@ -362,6 +448,20 @@ const examQuestions: ExamQuestion[] = [
     ],
     answers: [
       "Trapecio inferiores, dorsal ancho, serrato menor inferior, oblicuo mayor, oblicuo menor, transverso abdominal, paravertebrales",
+    ],
+  },
+  {
+    id: "lumbar-orden-examen-foto",
+    muscle: "Zona Lumbar",
+    prompt: "¿Qué músculos corresponden al masaje lumbar en su orden de trabajo?",
+    options: [
+      "Trapecio fibras inferiores, dorsal ancho, serrato menor inferior, oblicuo mayor, oblicuo menor, transverso abdominal, cresta ilíaca inserciones, paravertebrales",
+      "Trapecio todas sus fibras inferiores, dorsal ancho, serrato menor inferior, cresta ilíaca inserciones, oblicuo mayor, oblicuo menor, transverso abdominal, paravertebrales",
+      "Trapecio fibras inferiores, dorsal ancho, serrato menor inferior, cresta ilíaca inserciones, oblicuo mayor, oblicuo menor, transverso abdominal, paravertebrales",
+      "Ninguna es correcta",
+    ],
+    answers: [
+      "Trapecio fibras inferiores, dorsal ancho, serrato menor inferior, cresta ilíaca inserciones, oblicuo mayor, oblicuo menor, transverso abdominal, paravertebrales",
     ],
   },
   {
@@ -413,6 +513,13 @@ const examQuestions: ExamQuestion[] = [
     answers: ["Inserción en apófisis mastoides y rotación ipsilateral de la cabeza"],
   },
   {
+    id: "mastoides-accion-recorrido",
+    muscle: "Preguntas cruzadas",
+    prompt: "¿Qué músculos comparten acción, parte de su recorrido e inserción en la apófisis mastoides?",
+    options: ["Esplenio y Complexo Mayor", "Esplenio y Complexo Menor", "Complexo Mayor y Complexo Menor", "Ninguna es correcta"],
+    answers: ["Esplenio y Complexo Menor"],
+  },
+  {
     id: "esplenio-complexo-menor-recorrido",
     muscle: "Preguntas cruzadas",
     prompt: "Marca las afirmaciones correctas sobre esplenio y complexo menor.",
@@ -451,6 +558,20 @@ const examQuestions: ExamQuestion[] = [
       "Ninguna es correcta",
     ],
     answers: ["Comparten relación con la zona posterior del cráneo y cuello"],
+  },
+  {
+    id: "rotadores-contralaterales-examen",
+    muscle: "Preguntas cruzadas",
+    prompt: "¿Qué músculos realizan la acción de rotador contralateral?",
+    options: ["Trapecio y Complexo Mayor", "Esplenio y Complexo Menor", "Trapecio y ECOM", "Ninguna es correcta"],
+    answers: ["Trapecio y ECOM"],
+  },
+  {
+    id: "rotadores-ipsilaterales-examen",
+    muscle: "Preguntas cruzadas",
+    prompt: "¿Qué músculos realizan la acción de rotador ipsilateral?",
+    options: ["Trapecio y Complexo Mayor", "Esplenio y Complexo Menor", "Trapecio y ECOM", "Ninguna es correcta"],
+    answers: ["Esplenio y Complexo Menor"],
   },
   {
     id: "esternocleidomastoideo-simple",
