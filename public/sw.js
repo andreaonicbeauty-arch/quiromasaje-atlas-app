@@ -1,4 +1,4 @@
-const CACHE_NAME = "quiromasaje-atlas-v9";
+const CACHE_NAME = "quiromasaje-atlas-v10";
 const BASE_PATH = "/quiromasaje-atlas-app/";
 const APP_SHELL = [
   BASE_PATH,

@@ -79,6 +79,36 @@ const videoLessons: VideoLesson[] = [
     summary: "Demostración práctica para revisar el masaje de relajación y acompañar el protocolo escrito.",
     driveId: "101czNB8sPaEcKwWuvgIuDUW2iDBupNiG",
   },
+  {
+    id: "masaje-cervical-supino",
+    title: "Masaje cervical II en supino",
+    summary: "Vídeo práctico para repasar el trabajo cervical en posición supina.",
+    driveId: "1u0cCxn7KyrY3TEJX-G3UR7S-x_YpoTr7",
+  },
+  {
+    id: "masaje-cervical-prono",
+    title: "Masaje cervical en prono",
+    summary: "Demostración de masaje cervical en prono para acompañar el protocolo de camilla.",
+    driveId: "1fR1u6Y8cfTIlzM9V6498nP-pNDPABSUp",
+  },
+  {
+    id: "masaje-zona-glutea",
+    title: "Masaje zona glútea",
+    summary: "Secuencia visual para revisar el masaje de la zona glútea.",
+    driveId: "14sqydOKbe6V-wGjalxK_4xPwHZsRLwfr",
+  },
+  {
+    id: "tejido-blando-paravertebral",
+    title: "Técnicas de tejido blando paravertebral",
+    summary: "Vídeo de apoyo para estudiar técnicas de tejido blando en paravertebrales.",
+    driveId: "1tNaULmSQJeqk_K-4rgQ--QGY03qvsenM",
+  },
+  {
+    id: "masaje-aerofagia-estrenimiento",
+    title: "Masaje de aerofagia y estreñimiento",
+    summary: "Demostración audiovisual del protocolo abdominal de aerofagia y estreñimiento.",
+    driveId: "1StEKvQCtD1RkdpilmdQCiTtysxNWB4Qz",
+  },
 ];
 
 const drivePreviewUrl = (driveId: string) => `https://drive.google.com/file/d/${driveId}/preview`;
