@@ -12,6 +12,7 @@ import {
   HeartPulse,
   Home,
   Maximize2,
+  PlayCircle,
   RotateCcw,
   Search,
   Sparkles,
@@ -31,7 +32,7 @@ type AtlasItem = {
   summary: string;
 };
 
-type View = "home" | "massages" | "library" | "exam" | "test";
+type View = "home" | "massages" | "videos" | "library" | "exam" | "test";
 
 type ExamMuscle = {
   id: string;
@@ -57,6 +58,31 @@ type ZoneTheory = {
   title: string;
   items: string[];
 };
+
+type VideoLesson = {
+  id: string;
+  title: string;
+  summary: string;
+  driveId: string;
+};
+
+const videoLessons: VideoLesson[] = [
+  {
+    id: "tecnicas-masaje",
+    title: "Técnicas de masaje",
+    summary: "Vídeo de apoyo para repasar la ejecución y el orden de las técnicas de masaje.",
+    driveId: "1RVYT3NryiV0i2Nl_8i3KuSNso3OrHnT1",
+  },
+  {
+    id: "masaje-relajacion",
+    title: "Masaje de relajación",
+    summary: "Demostración práctica para revisar el masaje de relajación y acompañar el protocolo escrito.",
+    driveId: "101czNB8sPaEcKwWuvgIuDUW2iDBupNiG",
+  },
+];
+
+const drivePreviewUrl = (driveId: string) => `https://drive.google.com/file/d/${driveId}/preview`;
+const driveViewUrl = (driveId: string) => `https://drive.google.com/file/d/${driveId}/view`;
 
 const examMuscles: ExamMuscle[] = [
   {
@@ -594,6 +620,16 @@ function App() {
             </div>
             <MassageRail items={massages} onOpen={setReader} />
           </section>
+
+          <section className="rail-section video-teaser">
+            <div className="section-heading">
+              <h3>Vídeos de práctica</h3>
+              <button className="inline-link" type="button" onClick={() => setView("videos")}>
+                Ver todos
+              </button>
+            </div>
+            <VideoStrip videos={videoLessons} />
+          </section>
         </>
       )}
 
@@ -613,6 +649,8 @@ function App() {
           </div>
         </section>
       )}
+
+      {view === "videos" && <VideoSection videos={videoLessons} />}
 
       {view === "library" && (
         <section className="page-section">
@@ -667,6 +705,10 @@ function App() {
           <HeartPulse size={22} />
           Masajes
         </button>
+        <button className={view === "videos" ? "active" : ""} type="button" onClick={() => setView("videos")}>
+          <PlayCircle size={22} />
+          Vídeos
+        </button>
         <button className={view === "library" ? "active" : ""} type="button" onClick={() => setView("library")}>
           <Grid2X2 size={22} />
           Biblioteca
@@ -683,6 +725,60 @@ function App() {
 
       {reader && <ReaderModal item={reader} onClose={() => setReader(null)} />}
     </main>
+  );
+}
+
+function VideoStrip({ videos }: { videos: VideoLesson[] }) {
+  return (
+    <div className="video-strip">
+      {videos.map((video) => (
+        <a className="video-mini-card" href={driveViewUrl(video.driveId)} target="_blank" rel="noreferrer" key={video.id}>
+          <PlayCircle size={22} />
+          <span>
+            <strong>{video.title}</strong>
+            <small>{video.summary}</small>
+          </span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function VideoSection({ videos }: { videos: VideoLesson[] }) {
+  return (
+    <section className="page-section video-page">
+      <div className="section-heading expanded">
+        <div>
+          <h2>Vídeos</h2>
+          <p>Material audiovisual para repasar técnicas y secuencias junto a las fichas.</p>
+        </div>
+        <PlayCircle size={24} />
+      </div>
+      <div className="video-grid">
+        {videos.map((video) => (
+          <article className="video-card" key={video.id}>
+            <div className="video-frame">
+              <iframe
+                title={video.title}
+                src={drivePreviewUrl(video.driveId)}
+                allow="autoplay; encrypted-media; fullscreen"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+            <div className="video-copy">
+              <span>Google Drive</span>
+              <h3>{video.title}</h3>
+              <p>{video.summary}</p>
+              <a className="ghost-button" href={driveViewUrl(video.driveId)} target="_blank" rel="noreferrer">
+                <PlayCircle size={18} />
+                Abrir vídeo
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
