@@ -187,6 +187,17 @@ const examMuscles: ExamMuscle[] = [
     destination: "Hueso temporal en su apófisis mastoides.",
     action: "Rotación contralateral de la cabeza hacia el lado opuesto a la contracción.",
   },
+  {
+    id: "suboccipitales",
+    title: "Suboccipitales",
+    note: "De superficial a profundo: oblicuo menor, recto posterior mayor y recto posterior menor.",
+    subgroups: ["Oblicuo menor", "Recto posterior mayor", "Recto posterior menor"],
+    origin:
+      "Oblicuo menor en apófisis transversa de C1 o atlas; recto posterior mayor en apófisis espinosa de C2 o axis; recto posterior menor en la parte posterior de C1 o atlas.",
+    destination:
+      "Oblicuo menor y recto posterior mayor en el hueso occipucio, centro de la mitad lateral suboccipital; recto posterior menor en el centro de la mitad medial suboccipital.",
+    action: "Regulan el ajuste de la cabeza sobre el cuello, sobre todo en la flexión posterior de la cabeza.",
+  },
 ];
 
 const examQuestions: ExamQuestion[] = [
@@ -584,6 +595,59 @@ const examQuestions: ExamQuestion[] = [
       "Flexión posterior de cabeza y cuello",
     ],
     answers: ["Rotación contralateral de la cabeza hacia el lado opuesto a la contracción"],
+  },
+  {
+    id: "suboccipitales-orden",
+    muscle: "Suboccipitales",
+    prompt: "¿Cuál es el orden de los suboccipitales de superficial a profundo?",
+    options: [
+      "Oblicuo menor, recto posterior mayor, recto posterior menor",
+      "Recto posterior menor, recto posterior mayor, oblicuo menor",
+      "Recto posterior mayor, oblicuo menor, recto posterior menor",
+      "Ninguna es correcta",
+    ],
+    answers: ["Oblicuo menor, recto posterior mayor, recto posterior menor"],
+  },
+  {
+    id: "suboccipitales-origenes",
+    muscle: "Suboccipitales",
+    prompt: "Marca las afirmaciones correctas sobre el origen de los suboccipitales.",
+    options: [
+      "El oblicuo menor nace en las apófisis transversas de C1 o atlas",
+      "El recto posterior mayor nace en la apófisis espinosa de C2 o axis",
+      "El recto posterior menor nace en la parte posterior de C1 o atlas",
+      "Ninguna es correcta",
+    ],
+    answers: [
+      "El oblicuo menor nace en las apófisis transversas de C1 o atlas",
+      "El recto posterior mayor nace en la apófisis espinosa de C2 o axis",
+      "El recto posterior menor nace en la parte posterior de C1 o atlas",
+    ],
+    hint: "Puede haber una, varias o ninguna correcta.",
+  },
+  {
+    id: "suboccipitales-insercion-compartida",
+    muscle: "Suboccipitales",
+    prompt: "¿Qué músculos comparten inserción en el centro de la mitad lateral suboccipital del occipucio?",
+    options: [
+      "Recto posterior mayor y oblicuo menor",
+      "Recto posterior menor y complexo mayor",
+      "Oblicuo menor y esternocleidomastoideo",
+      "Ninguna es correcta",
+    ],
+    answers: ["Recto posterior mayor y oblicuo menor"],
+  },
+  {
+    id: "suboccipitales-accion",
+    muscle: "Suboccipitales",
+    prompt: "¿Cuál es la acción principal de los suboccipitales según la ficha?",
+    options: [
+      "Regulan el ajuste de la cabeza sobre el cuello, sobre todo en flexión posterior",
+      "Realizan aducción del omóplato y llevan los hombros hacia atrás",
+      "Producen rotación externa y abducción del muslo",
+      "Ninguna es correcta",
+    ],
+    answers: ["Regulan el ajuste de la cabeza sobre el cuello, sobre todo en flexión posterior"],
   },
   {
     id: "protocolo-masaje-primer-paso",
