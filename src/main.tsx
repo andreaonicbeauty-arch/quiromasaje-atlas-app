@@ -709,9 +709,14 @@ function App() {
           <PlayCircle size={22} />
           Vídeos
         </button>
-        <button className={view === "library" ? "active" : ""} type="button" onClick={() => setView("library")}>
+        <button
+          className={view === "library" ? "active" : ""}
+          type="button"
+          onClick={() => setView("library")}
+          aria-label="Biblioteca"
+        >
           <Grid2X2 size={22} />
-          Biblioteca
+          Biblio
         </button>
         <button className={view === "exam" ? "active" : ""} type="button" onClick={() => setView("exam")}>
           <ClipboardList size={22} />
