@@ -424,13 +424,13 @@ const examQuestions: ExamQuestion[] = [
     muscle: "Zona Dorsal",
     prompt: "Elige el orden correcto de superficial a profundo en zona dorsal.",
     options: [
-      "Trapecio fibras inferiores, dorsal ancho, serrato menor inferior, romboides, serrato menor superior, paravertebrales, intercostales",
+      "Trapecio fibras inferiores, dorsal ancho, romboides, serrato menor superior, serrato menor inferior, paravertebrales, intercostales",
       "Trapecio fibras inferiores, romboide, serrato menor superior, esplenio, complexo menor, complexo mayor",
       "Dorsal ancho, trapecio fibras inferiores, transverso abdominal, intercostales",
       "Ninguna es correcta",
     ],
     answers: [
-      "Trapecio fibras inferiores, dorsal ancho, serrato menor inferior, romboides, serrato menor superior, paravertebrales, intercostales",
+      "Trapecio fibras inferiores, dorsal ancho, romboides, serrato menor superior, serrato menor inferior, paravertebrales, intercostales",
     ],
   },
   {
@@ -438,13 +438,13 @@ const examQuestions: ExamQuestion[] = [
     muscle: "Zona Dorsal",
     prompt: "Según el examen fotografiado, ¿qué orden de trabajo corresponde al masaje dorsal?",
     options: [
+      "Trapecio fibras inferiores, dorsal ancho, romboides, serrato menor superior, serrato menor inferior, brazo en jarra, paravertebrales",
       "Trapecio fibras inferiores, dorsal ancho, serrato menor inferior, romboides, serrato menor superior, brazo en jarra, paravertebrales",
-      "Trapecio fibras inferiores, dorsal ancho, romboides, serrato menor superior, brazo en jarra, paravertebrales",
       "Trapecio fibras inferiores y medias, dorsal ancho, serrato menor inferior, romboides, serrato menor superior, brazo en jarra, paravertebrales",
       "Ninguna es correcta",
     ],
     answers: [
-      "Trapecio fibras inferiores, dorsal ancho, serrato menor inferior, romboides, serrato menor superior, brazo en jarra, paravertebrales",
+      "Trapecio fibras inferiores, dorsal ancho, romboides, serrato menor superior, serrato menor inferior, brazo en jarra, paravertebrales",
     ],
   },
   {
@@ -706,9 +706,9 @@ const zoneTheory: ZoneTheory[] = [
     items: [
       "Trapecio fibras inferiores (todos)",
       "Dorsal ancho",
-      "Serrato menor inferior",
       "Romboides",
       "Serrato menor superior",
+      "Serrato menor inferior",
       "Paravertebrales",
       "Intercostales",
     ],
