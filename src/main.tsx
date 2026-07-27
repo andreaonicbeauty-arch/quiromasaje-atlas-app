@@ -56,6 +56,7 @@ type ExamQuestion = {
 type ZoneTheory = {
   id: string;
   title: string;
+  label?: string;
   items: string[];
 };
 
@@ -739,6 +740,57 @@ const zoneTheory: ZoneTheory[] = [
       "Final: sistema venoso superficial, estiramientos y patologías asociadas",
     ],
   },
+  {
+    id: "primer-plano-dorsal-lumbar",
+    title: "1º Plano",
+    label: "Lumbar y dorsal",
+    items: [
+      "Lumbar: trapecio fibras inferiores algunas",
+      "Lumbar: dorsal ancho",
+      "Lumbar: serrato menor inferior",
+      "Dorsal: trapecio fibras inferiores todas",
+      "Dorsal: dorsal ancho",
+      "Dorsal: serrato menor inferior",
+    ],
+  },
+  {
+    id: "segundo-plano-dorsal-lumbar",
+    title: "2º Plano",
+    label: "Lumbar y dorsal",
+    items: [
+      "Lumbar: oblicuo mayor",
+      "Lumbar: oblicuo menor",
+      "Lumbar: transverso abdominal",
+      "Dorsal: romboides",
+      "Dorsal: serrato menor superior",
+      "Si hay dolor o bloqueo: S.V.S antes de continuar",
+    ],
+  },
+  {
+    id: "tercer-plano-dorsal-lumbar",
+    title: "3º Plano",
+    label: "Lumbar y dorsal",
+    items: [
+      "Lumbar: paravertebrales",
+      "Dorsal: paravertebrales",
+      "Dorsal: intercostales",
+      "Después del plano: S.V.S",
+      "Final: técnicas específicas, estiramiento y frío",
+    ],
+  },
+  {
+    id: "plano-cervical-prono",
+    title: "Plano Cervical Prono",
+    label: "Refuerzo de planos",
+    items: [
+      "Trapecio fibras superiores",
+      "Angular del omóplato",
+      "Esplenio",
+      "Complexo menor",
+      "Complexo mayor",
+      "Suboccipitales",
+    ],
+  },
 ];
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -1039,7 +1091,7 @@ function ExamSection({ muscles, zones }: { muscles: ExamMuscle[]; zones: ZoneThe
         {zones.map((zone) => (
           <article className="zone-card" key={zone.id}>
             <h3>{zone.title}</h3>
-            <span>De superficial a profundo</span>
+            <span>{zone.label ?? "De superficial a profundo"}</span>
             <ol className="zone-list">
               {zone.items.map((item) => (
                 <li key={item}>{item}</li>
