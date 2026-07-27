@@ -57,7 +57,11 @@ type ZoneTheory = {
   id: string;
   title: string;
   label?: string;
-  items: string[];
+  items?: string[];
+  groups?: {
+    title: string;
+    items: string[];
+  }[];
 };
 
 type VideoLesson = {
@@ -743,39 +747,54 @@ const zoneTheory: ZoneTheory[] = [
   {
     id: "primer-plano-dorsal-lumbar",
     title: "1º Plano",
-    label: "Lumbar y dorsal",
-    items: [
-      "Lumbar: trapecio fibras inferiores algunas",
-      "Lumbar: dorsal ancho",
-      "Lumbar: serrato menor inferior",
-      "Dorsal: trapecio fibras inferiores todas",
-      "Dorsal: dorsal ancho",
-      "Dorsal: serrato menor inferior",
+    label: "Refuerzo de planos",
+    groups: [
+      {
+        title: "Lumbar",
+        items: ["Trapecio fibras inferiores algunas", "Dorsal ancho", "Serrato menor inferior"],
+      },
+      {
+        title: "Dorsal",
+        items: ["Trapecio fibras inferiores todas", "Dorsal ancho", "Serrato menor inferior"],
+      },
     ],
   },
   {
     id: "segundo-plano-dorsal-lumbar",
     title: "2º Plano",
-    label: "Lumbar y dorsal",
-    items: [
-      "Lumbar: oblicuo mayor",
-      "Lumbar: oblicuo menor",
-      "Lumbar: transverso abdominal",
-      "Dorsal: romboides",
-      "Dorsal: serrato menor superior",
-      "Si hay dolor o bloqueo: S.V.S antes de continuar",
+    label: "Refuerzo de planos",
+    groups: [
+      {
+        title: "Lumbar",
+        items: ["Oblicuo mayor", "Oblicuo menor", "Transverso abdominal"],
+      },
+      {
+        title: "Dorsal",
+        items: ["Romboides", "Serrato menor superior"],
+      },
+      {
+        title: "Nota",
+        items: ["Si hay dolor o bloqueo: S.V.S antes de continuar"],
+      },
     ],
   },
   {
     id: "tercer-plano-dorsal-lumbar",
     title: "3º Plano",
-    label: "Lumbar y dorsal",
-    items: [
-      "Lumbar: paravertebrales",
-      "Dorsal: paravertebrales",
-      "Dorsal: intercostales",
-      "Después del plano: S.V.S",
-      "Final: técnicas específicas, estiramiento y frío",
+    label: "Refuerzo de planos",
+    groups: [
+      {
+        title: "Lumbar",
+        items: ["Paravertebrales"],
+      },
+      {
+        title: "Dorsal",
+        items: ["Paravertebrales", "Intercostales"],
+      },
+      {
+        title: "Después",
+        items: ["S.V.S", "Técnicas específicas", "Estiramiento", "Frío"],
+      },
     ],
   },
   {
@@ -1092,11 +1111,26 @@ function ExamSection({ muscles, zones }: { muscles: ExamMuscle[]; zones: ZoneThe
           <article className="zone-card" key={zone.id}>
             <h3>{zone.title}</h3>
             <span>{zone.label ?? "De superficial a profundo"}</span>
-            <ol className="zone-list">
-              {zone.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ol>
+            {zone.groups ? (
+              <div className="zone-groups">
+                {zone.groups.map((group) => (
+                  <div className="zone-group" key={group.title}>
+                    <h4>{group.title}</h4>
+                    <ol className="zone-list">
+                      {group.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ol>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <ol className="zone-list">
+                {(zone.items ?? []).map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ol>
+            )}
           </article>
         ))}
       </div>
