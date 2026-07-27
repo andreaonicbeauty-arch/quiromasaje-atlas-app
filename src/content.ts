@@ -403,10 +403,30 @@ export const atlasContent = {
       "summary": "Compendio de protocolos por afectacion muscular para consulta rapida."
     },
     {
+      "id": "masaje-anticelulitico-celulitis-blanda",
+      "title": "Masaje Anticelulítico - Celulitis Blanda",
+      "category": "massage",
+      "order": 13,
+      "image": "assets/masaje-anticelulitico-celulitis-blanda.jpg",
+      "pdf": "assets/masaje-anticelulitico-celulitis-blanda.jpg",
+      "fileLabel": "Imagen",
+      "summary": "Ficha visual del protocolo anticelulítico para repasar características, tiempos y orden de maniobras."
+    },
+    {
+      "id": "masaje-anticelulitico-celulitis-dura",
+      "title": "Masaje Anticelulítico - Celulitis Dura",
+      "category": "massage",
+      "order": 14,
+      "image": "assets/masaje-anticelulitico-celulitis-dura.jpg",
+      "pdf": "assets/masaje-anticelulitico-celulitis-dura.jpg",
+      "fileLabel": "Imagen",
+      "summary": "Ficha visual del protocolo anticelulítico para repasar características, tiempos y orden de maniobras."
+    },
+    {
       "id": "masaje-sacro",
       "title": "Masaje Sacro",
       "category": "massage",
-      "order": 13,
+      "order": 15,
       "image": "assets/masaje-sacro.jpg",
       "pdf": "assets/masaje-sacro.jpg",
       "fileLabel": "Imagen",

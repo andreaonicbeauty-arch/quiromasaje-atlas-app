@@ -37,6 +37,8 @@ TITLE_FIXES = {
     "Gluteo Mayor": "Glúteo Mayor",
     "Gluteo Medio": "Glúteo Medio",
     "Gluteo Menor": "Glúteo Menor",
+    "Masaje Anticelulitico Celulitis Blanda": "Masaje Anticelulítico - Celulitis Blanda",
+    "Masaje Anticelulitico Celulitis Dura": "Masaje Anticelulítico - Celulitis Dura",
     "Masaje Glúteo": "Masaje Glúteo",
     "Masaje de Relajación Decubito Prono": "Masaje de Relajación Decúbito Prono",
     "Masaje de Relajación Decubito Supino": "Masaje de Relajación Decúbito Supino",
@@ -66,6 +68,8 @@ def summary_for(title: str, is_massage: bool) -> str:
             return "Compendio de protocolos por afectacion muscular para consulta rapida."
         if "Sacro" in title:
             return "Imagen de referencia para consulta visual del masaje sacro."
+        if "Anticelulítico" in title:
+            return "Ficha visual del protocolo anticelulítico para repasar características, tiempos y orden de maniobras."
         return "Protocolo abdominal para consultar pasos, ritmo e indicaciones de forma visual."
     if "Esquema Masaje" in title:
         return "Esquema visual del protocolo de masaje en C.V. con pasos, técnicas y bloques de trabajo."
