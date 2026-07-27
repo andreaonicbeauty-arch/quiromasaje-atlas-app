@@ -659,12 +659,12 @@ const examQuestions: ExamQuestion[] = [
     muscle: "Esquema de Masaje",
     prompt: "Según el esquema de masaje, ¿con qué empieza el protocolo?",
     options: [
-      "TCS (tejido celular subcutáneo)",
+      "TCS (tejido celular subcutáneo, sin aceite)",
       "Patologías asociadas",
       "Estiramientos",
       "Bloques de T.N.M.",
     ],
-    answers: ["TCS (tejido celular subcutáneo)"],
+    answers: ["TCS (tejido celular subcutáneo, sin aceite)"],
   },
   {
     id: "protocolo-masaje-venoso",
@@ -679,13 +679,13 @@ const examQuestions: ExamQuestion[] = [
     prompt: "Marca las afirmaciones correctas sobre la parte de planos musculares del esquema.",
     options: [
       "En los planos donde haya afectación muscular se añade trabajo",
-      "Los bloques se organizan como amasamiento + T.N.M. + amasamiento",
+      "Los bloques amasamiento + T.N.M. + amasamiento se pueden hacer en cualquier plano",
       "El SVS (sistema venoso superficial) se trabaja con rotación contralateral",
       "Ninguna es correcta",
     ],
     answers: [
       "En los planos donde haya afectación muscular se añade trabajo",
-      "Los bloques se organizan como amasamiento + T.N.M. + amasamiento",
+      "Los bloques amasamiento + T.N.M. + amasamiento se pueden hacer en cualquier plano",
     ],
     hint: "Puede haber una, varias o ninguna correcta.",
   },
@@ -734,15 +734,33 @@ const zoneTheory: ZoneTheory[] = [
   {
     id: "protocolo-masaje-cv",
     title: "Esquema de Masaje",
-    label: "TCS y SVS",
-    items: [
-      "TCS (tejido celular subcutáneo): pinzado rodado y presión palmar profunda",
-      "SVS (sistema venoso superficial): vaciados",
-      "Músculos en general: amasamientos digital/nudillar o palmo-digital",
-      "Músculos en particular: técnicas de pre-normalización o inespecíficas",
-      "En planos con afectación muscular: añadir técnicas de normalización o específicas",
-      "Bloques: amasamiento + T.N.M. + amasamiento",
-      "Final: SVS (sistema venoso superficial), estiramientos y patologías asociadas",
+    label: "Orden de los 14 puntos",
+    groups: [
+      {
+        title: "Orden",
+        items: [
+          "1. TCS (tejido celular subcutáneo, sin aceite)",
+          "2. Aceite",
+          "3. SVS (sistema venoso superficial)",
+          "4. Amasamiento (músculos en general)",
+          "5. SVS (sistema venoso superficial)",
+          "6. 1º plano (músculos en particular)",
+          "7. SVS (sistema venoso superficial). Si hay dolor o bloqueo",
+          "8. 2º plano (músculos en particular)",
+          "9. SVS (sistema venoso superficial)",
+          "10. 3º plano (músculos en particular)",
+          "11. SVS (sistema venoso superficial)",
+          "12. Técnicas específicas (T.T.B. y tracciones)",
+          "13. Estiramiento",
+          "14. Frío",
+        ],
+      },
+      {
+        title: "Anotación",
+        items: [
+          "Los bloques amasamiento + T.N.M. (técnicas de normalización muscular) + amasamiento se pueden hacer en cualquier plano.",
+        ],
+      },
     ],
   },
   {
