@@ -821,13 +821,23 @@ const zoneTheory: ZoneTheory[] = [
     id: "plano-cervical-prono",
     title: "Plano Cervical Prono",
     label: "Refuerzo de planos",
-    items: [
-      "Trapecio fibras superiores",
-      "Angular del omóplato",
-      "Esplenio",
-      "Complexo menor",
-      "Complexo mayor",
-      "Suboccipitales",
+    groups: [
+      {
+        title: "1º Plano Cervical (prono)",
+        items: ["Trapecio fibras medias y superiores"],
+      },
+      {
+        title: "2º Plano Cervical (prono)",
+        items: ["Romboides", "Serrato menor superior"],
+      },
+      {
+        title: "3º Plano Cervical (prono)",
+        items: ["Esplenio", "Complexo menor y mayor"],
+      },
+      {
+        title: "4º Plano Cervical (prono)",
+        items: ["Angular del omóplato"],
+      },
     ],
   },
 ];
