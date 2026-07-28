@@ -659,12 +659,12 @@ const examQuestions: ExamQuestion[] = [
     muscle: "Esquema de Masaje",
     prompt: "Según el esquema de masaje, ¿con qué empieza el protocolo?",
     options: [
-      "TCS (tejido celular subcutáneo, sin aceite)",
+      "T.C.S.",
       "Patologías asociadas",
       "Estiramientos",
       "Bloques de T.N.M.",
     ],
-    answers: ["TCS (tejido celular subcutáneo, sin aceite)"],
+    answers: ["T.C.S."],
   },
   {
     id: "protocolo-masaje-venoso",
@@ -734,32 +734,29 @@ const zoneTheory: ZoneTheory[] = [
   {
     id: "protocolo-masaje-cv",
     title: "Esquema de Masaje",
-    label: "Orden de los 14 puntos",
+    label: "Orden de los 12 puntos",
     groups: [
       {
         title: "Orden",
         items: [
-          "1. TCS (tejido celular subcutáneo, sin aceite)",
+          "1. T.C.S.",
           "2. Aceite",
-          "3. SVS (sistema venoso superficial)",
-          "4. Músculos en general con amasamientos digital y/o nudillar y palmo-digital",
-          "5. SVS (sistema venoso superficial)",
-          "6. Músculos en particular (planos)",
-          "7. 1º plano",
-          "8. SVS (sistema venoso superficial)",
-          "9. 2º plano",
-          "10. SVS (sistema venoso superficial)",
-          "11. 3º plano",
-          "12. SVS (sistema venoso superficial)",
-          "13. Técnicas específicas (T.T.B. y tracciones) y estiramiento",
-          "14. Frío",
+          "3. S.V.S.",
+          "4. Músculos en General => Amasamientos => Digital y/o nudillar / Palmo Digital",
+          "5. S.V.S.",
+          "6. Músculos en Particular => Planos",
+          "7. Plano 1 o Superficial => S.V.S.",
+          "8. Plano 2 o Intermedio => S.V.S.",
+          "9. Plano 3 o Profundo => S.V.S.",
+          "10. Técnicas Específicas => (T.T.B y/o Tracciones)",
+          "11. Estiramientos",
+          "12. Frío",
         ],
       },
       {
         title: "Anotación",
         items: [
-          "Los bloques amasamiento + T.N.M. (técnicas de normalización muscular) + amasamiento se pueden hacer en cualquier plano.",
-          "Si hay dolor en cualquier plano implica bloqueo.",
+          "Si hay dolor: Bloque (Amas + T.N.M. + Amas).",
         ],
       },
     ],
@@ -1126,6 +1123,94 @@ function MassageCard({ item, onOpen, large = false }: { item: AtlasItem; onOpen:
   );
 }
 
+function MassageSchemeDiagram() {
+  return (
+    <div className="massage-scheme" aria-label="Esquema de Masaje">
+      <div className="scheme-row">
+        <span className="scheme-number green">1</span>
+        <strong>T.C.S.</strong>
+      </div>
+      <div className="scheme-row">
+        <span className="scheme-number">2</span>
+        <strong>Aceite</strong>
+      </div>
+      <div className="scheme-row">
+        <span className="scheme-number red">3</span>
+        <strong>S.V.S.</strong>
+      </div>
+      <div className="scheme-row scheme-branch">
+        <div className="scheme-main">
+          <span className="scheme-number">4</span>
+          <strong>Musculos en General</strong>
+          <span className="scheme-arrow">=&gt;</span>
+          <strong>AMASAMIENTOS</strong>
+        </div>
+        <div className="scheme-split">
+          <span className="scheme-arrow">=&gt;</span>
+          <span>Digital y/o nudillar</span>
+          <span className="scheme-arrow">=&gt;</span>
+          <span>Palmo Digital</span>
+        </div>
+        <div className="scheme-brace">&#125;</div>
+        <div className="scheme-direction">&uarr; &darr; &uarr;</div>
+      </div>
+      <div className="scheme-row">
+        <span className="scheme-number red">5</span>
+        <strong>S.V.S.</strong>
+      </div>
+      <div className="scheme-row scheme-inline">
+        <span className="scheme-number">6</span>
+        <strong>Musculos en Particular</strong>
+        <span className="scheme-arrow">=&gt;</span>
+        <strong>PLANOS</strong>
+      </div>
+      <div className="scheme-plane-block">
+        <div className="scheme-planes">
+          <div className="scheme-row scheme-inline">
+            <span className="scheme-number">7</span>
+            <span>Plano 1 o Superficial</span>
+            <span className="scheme-arrow red">=&gt;</span>
+            <strong className="red-text">S.V.S.</strong>
+          </div>
+          <div className="scheme-row scheme-inline">
+            <span className="scheme-number">8</span>
+            <span>Plano 2 o Intermedio</span>
+            <span className="scheme-arrow red">=&gt;</span>
+            <strong className="red-text">S.V.S.</strong>
+          </div>
+          <div className="scheme-row scheme-inline">
+            <span className="scheme-number">9</span>
+            <span>Plano 3 o Profundo</span>
+            <span className="scheme-arrow red">=&gt;</span>
+            <strong className="red-text">S.V.S.</strong>
+          </div>
+        </div>
+        <div className="scheme-plane-note">
+          <div className="scheme-bracket">&#125;</div>
+          <p>
+            <span>* Si hay dolor</span>
+            <strong>Bloque (Amas + T.N.M. + Amas)</strong>
+          </p>
+        </div>
+      </div>
+      <div className="scheme-row scheme-inline">
+        <span className="scheme-number">10</span>
+        <strong>Tecnicas Especificas</strong>
+        <span className="scheme-arrow">=&gt;</span>
+        <span>(T.T.B y/o Tracciones)</span>
+      </div>
+      <div className="scheme-row">
+        <span className="scheme-number">11</span>
+        <strong>Estiramientos</strong>
+      </div>
+      <div className="scheme-row">
+        <span className="scheme-number">12</span>
+        <strong>Frio</strong>
+      </div>
+    </div>
+  );
+}
+
 function ExamSection({ muscles, zones }: { muscles: ExamMuscle[]; zones: ZoneTheory[] }) {
   return (
     <section className="page-section exam-page">
@@ -1141,24 +1226,18 @@ function ExamSection({ muscles, zones }: { muscles: ExamMuscle[]; zones: ZoneThe
           <article className="zone-card" key={zone.id}>
             <h3>{zone.title}</h3>
             <span>{zone.label ?? "De superficial a profundo"}</span>
-            {zone.groups ? (
+            {zone.id === "protocolo-masaje-cv" ? (
+              <MassageSchemeDiagram />
+            ) : zone.groups ? (
               <div className="zone-groups">
                 {zone.groups.map((group) => (
                   <div className="zone-group" key={group.title}>
                     <h4>{group.title}</h4>
-                    {zone.id === "protocolo-masaje-cv" && group.title === "Orden" ? (
-                      <ol className="massage-flow">
-                        {group.items.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ol>
-                    ) : (
-                      <ol className="zone-list">
-                        {group.items.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ol>
-                    )}
+                    <ol className="zone-list">
+                      {group.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ol>
                   </div>
                 ))}
               </div>

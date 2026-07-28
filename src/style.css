@@ -596,35 +596,112 @@ h3 {
   padding-left: 2px;
 }
 
-.massage-flow {
+.massage-scheme {
   display: grid;
-  gap: 18px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: massage-step;
+  gap: 10px;
+  color: var(--ink);
+  overflow-x: auto;
+  padding-bottom: 2px;
 }
 
-.massage-flow li {
-  position: relative;
-  border: 1px solid rgba(73, 105, 86, 0.18);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--muted);
-  line-height: 1.35;
-  padding: 10px 12px;
+.scheme-row,
+.scheme-main,
+.scheme-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
 }
 
-.massage-flow li:not(:last-child)::after {
-  content: "↓";
-  position: absolute;
-  left: 50%;
-  bottom: -19px;
-  transform: translateX(-50%);
+.scheme-row {
+  min-height: 28px;
+}
+
+.scheme-number {
+  display: inline-grid;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 50%;
   color: var(--sage);
-  font-size: 1rem;
+  font-size: 0.86rem;
   font-weight: 900;
-  line-height: 1;
+}
+
+.scheme-number.red,
+.scheme-arrow.red,
+.red-text {
+  color: #b63d4b;
+}
+
+.scheme-number.green {
+  color: #579a77;
+}
+
+.scheme-arrow {
+  color: var(--sage);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.scheme-branch {
+  display: grid;
+  grid-template-columns: minmax(260px, max-content) minmax(170px, 1fr) auto auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.scheme-split {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 7px 8px;
+  color: var(--muted);
+}
+
+.scheme-brace,
+.scheme-bracket {
+  color: var(--sage);
+  font-size: 3.4rem;
+  font-weight: 300;
+  line-height: 0.8;
+}
+
+.scheme-direction {
+  color: var(--sage);
+  font-size: 1.45rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.scheme-plane-block {
+  display: grid;
+  grid-template-columns: minmax(310px, max-content) minmax(190px, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+.scheme-planes {
+  display: grid;
+  gap: 8px;
+}
+
+.scheme-plane-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scheme-plane-note p {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.scheme-plane-note strong {
+  color: var(--ink);
 }
 
 .exam-card {
