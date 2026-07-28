@@ -1146,11 +1146,19 @@ function ExamSection({ muscles, zones }: { muscles: ExamMuscle[]; zones: ZoneThe
                 {zone.groups.map((group) => (
                   <div className="zone-group" key={group.title}>
                     <h4>{group.title}</h4>
-                    <ol className="zone-list">
-                      {group.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ol>
+                    {zone.id === "protocolo-masaje-cv" && group.title === "Orden" ? (
+                      <ol className="massage-flow">
+                        {group.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ol>
+                    ) : (
+                      <ol className="zone-list">
+                        {group.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ol>
+                    )}
                   </div>
                 ))}
               </div>
