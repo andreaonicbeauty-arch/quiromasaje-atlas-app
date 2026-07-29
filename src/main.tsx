@@ -1223,7 +1223,7 @@ function ExamSection({ muscles, zones }: { muscles: ExamMuscle[]; zones: ZoneThe
       </div>
       <div className="zone-grid">
         {zones.map((zone) => (
-          <article className="zone-card" key={zone.id}>
+          <article className={`zone-card ${zone.id === "protocolo-masaje-cv" ? "wide" : ""}`} key={zone.id}>
             <h3>{zone.title}</h3>
             <span>{zone.label ?? "De superficial a profundo"}</span>
             {zone.id === "protocolo-masaje-cv" ? (

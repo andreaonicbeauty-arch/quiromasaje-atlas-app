@@ -431,6 +431,16 @@ export const atlasContent = {
       "pdf": "assets/masaje-sacro.jpg",
       "fileLabel": "Imagen",
       "summary": "Imagen de referencia para consulta visual del masaje sacro."
+    },
+    {
+      "id": "masaje-espalda-completa",
+      "title": "Masaje Espalda Completa",
+      "category": "massage",
+      "order": 16,
+      "image": "assets/masaje-espalda-completa.png",
+      "pdf": "pdfs/masaje-espalda-completa.pdf",
+      "fileLabel": "PDF",
+      "summary": "Protocolo de espalda completa para repasar la secuencia global de trabajo dorsal y lumbar."
     }
   ]
 };

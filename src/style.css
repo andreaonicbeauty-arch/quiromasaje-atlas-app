@@ -554,6 +554,14 @@ h3 {
   padding: 18px;
 }
 
+.zone-card.wide {
+  grid-column: span 2;
+}
+
+.zone-card.wide .massage-scheme {
+  overflow-x: visible;
+}
+
 .zone-card span {
   color: var(--sage);
   font-size: 0.82rem;
@@ -1006,6 +1014,14 @@ h3 {
   .exam-grid,
   .option-grid {
     grid-template-columns: 1fr;
+  }
+
+  .zone-card.wide {
+    grid-column: auto;
+  }
+
+  .zone-card.wide .massage-scheme {
+    overflow-x: auto;
   }
 
   .subgroup-list {
